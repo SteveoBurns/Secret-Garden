@@ -5,7 +5,7 @@ using UnityEngine;
 public class PullBox : MonoBehaviour
 {
 
-    [SerializeField] private float rayDistance = .75f;
+    [SerializeField] private float rayDistance = .55f;
     
 
     GameObject box;
