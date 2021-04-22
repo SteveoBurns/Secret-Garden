@@ -21,10 +21,10 @@ public class TriggerGate : MonoBehaviour
     }
 
 
-
+    
 
     // OnCollisionEnter2D is called when this collider2D/rigidbody2D has begun touching another rigidbody2D/collider2D (2D physics only)
-    private void OnTriggerEnter2D(Collider2D _collider)
+    private void OnTriggerStay2D(Collider2D _collider)
     {
         Debug.Log("has touched");
         if(isOpen == false)
@@ -35,17 +35,19 @@ public class TriggerGate : MonoBehaviour
                 isOpen = true;
                 closegate.SetActive(false);
                 openGate.SetActive(true);
-                Debug.Log("its happening"); 
+                Debug.Log("its open"); 
             }
         }
-        else
+        
+    }
+
+    private void OnTriggerExit2D(Collider2D _collider)
+    {
+        if (_collider.gameObject.tag == "Player" || _collider.gameObject.tag == "Box")
         {
-            if (_collider.gameObject.tag == "Player" || _collider.gameObject.tag == "Box")
-            {
-                isOpen = false;
-                closegate.SetActive(true);
-                openGate.SetActive(false);
-            }
+            isOpen = false;
+            closegate.SetActive(true);
+            openGate.SetActive(false);
         }
     }
 
