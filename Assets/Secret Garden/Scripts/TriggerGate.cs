@@ -30,7 +30,7 @@ public class TriggerGate : MonoBehaviour
         if(isOpen == false)
         {
 
-            if (_collider.gameObject.tag == "Player")
+            if (_collider.gameObject.tag == "Player" || _collider.gameObject.tag == "Box")
             {
                 isOpen = true;
                 closegate.SetActive(false);
@@ -40,7 +40,7 @@ public class TriggerGate : MonoBehaviour
         }
         else
         {
-            if (_collider.gameObject.tag == "Player")
+            if (_collider.gameObject.tag == "Player" || _collider.gameObject.tag == "Box")
             {
                 isOpen = false;
                 closegate.SetActive(true);
