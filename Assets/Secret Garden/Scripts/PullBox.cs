@@ -24,12 +24,25 @@ public class PullBox : MonoBehaviour
         RaycastHit2D hitDown = Physics2D.Raycast(transform.position, Vector2.down * transform.localScale.x, rayDistance);
         #endregion
 
-        MoveBox(hitRight);
-        MoveBox(hitLeft);
-        MoveBox(hitUp);
-        MoveBox(hitDown);
-        // Might have to nest these within if statements to stop getting two boxes at one time???
-        
+        #region Check Ray hits
+        if (hitRight.collider != null)
+        {
+            MoveBox(hitRight);
+        }
+        else if (hitLeft.collider != null)
+        {
+            MoveBox(hitLeft);
+        }
+        else if (hitUp.collider != null)
+        {
+            MoveBox(hitUp);
+        }
+        else if (hitDown.collider != null)
+        {
+            MoveBox(hitDown);
+        }
+        #endregion
+
 
     }
 
@@ -37,7 +50,7 @@ public class PullBox : MonoBehaviour
     /// Handles the movement of push/pull boxes
     /// </summary>
     /// <param name="ray">The raycast that is touching the box</param>
-    private void MoveBox(RaycastHit2D ray)
+    private bool MoveBox(RaycastHit2D ray)
     {
         if (ray.collider != null && ray.collider.tag == "Box" && Input.GetButtonDown("Space"))
         {
@@ -45,11 +58,15 @@ public class PullBox : MonoBehaviour
             box = ray.collider.gameObject;
             box.GetComponent<FixedJoint2D>().enabled = true;
             box.GetComponent<FixedJoint2D>().connectedBody = this.GetComponent<Rigidbody2D>();
+            return true;
         }
         else if (Input.GetButtonUp("Space"))
         {
             box.GetComponent<FixedJoint2D>().enabled = false;
+            return true;
         }
+
+        return false;
     }
 
 
