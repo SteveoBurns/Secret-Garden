@@ -68,7 +68,7 @@ public class PullBox : MonoBehaviour
 
         return false;
     }
-
+   
 
     //Draws the rays from the player so we can see them.
     private void OnDrawGizmos()
