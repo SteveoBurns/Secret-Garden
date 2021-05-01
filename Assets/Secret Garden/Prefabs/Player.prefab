@@ -94,9 +94,10 @@ GameObject:
   - component: {fileID: 2242962421649594129}
   - component: {fileID: 2242962421649594130}
   - component: {fileID: 2242962421649594131}
-  - component: {fileID: 2242962421649594128}
   - component: {fileID: 2242962421649594127}
+  - component: {fileID: 2242962421649594128}
   - component: {fileID: 2242962421649594126}
+  - component: {fileID: -2555508800410736135}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -191,20 +192,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &2242962421649594128
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2242962421649594132}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb109908fa1caee4480c12010def5fad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  rb: {fileID: 2242962421649594131}
 --- !u!58 &2242962421649594127
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -221,6 +208,20 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &2242962421649594128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2242962421649594132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb109908fa1caee4480c12010def5fad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
+  rb: {fileID: 2242962421649594131}
 --- !u!114 &2242962421649594126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -234,3 +235,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rayDistance: 0.55
+--- !u!114 &-2555508800410736135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2242962421649594132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 458bc60fee4c39b40ba957b9c96dedea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  petal1_1: {fileID: 0}
+  petal1_2: {fileID: 0}
+  petal1_3: {fileID: 0}
+  petal2_1: {fileID: 0}
+  petal2_2: {fileID: 0}
+  petal2_3: {fileID: 0}
+  petal3_1: {fileID: 0}
+  petal3_2: {fileID: 0}
+  petal3_3: {fileID: 0}
+  handle: {fileID: 0}
+  key: {fileID: 0}
