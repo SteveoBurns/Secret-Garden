@@ -17,6 +17,7 @@ TagManager:
   - petal3_3
   - handle
   - key
+  - handle_door
   layers:
   - Default
   - TransparentFX

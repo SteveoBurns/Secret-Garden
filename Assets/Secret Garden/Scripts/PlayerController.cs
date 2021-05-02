@@ -95,16 +95,24 @@ public class PlayerController : MonoBehaviour
         #region Handle PickUp
         if (collision.gameObject.tag=="handle")
         {
-           // handleShow = true;
-            handle.enabled = true;
+            handleShow = true;
+            //handle.enabled = true;
             Destroy(collision.gameObject);
+        }
+        #endregion
+        #region Handle Doors
+        if (collision.gameObject.tag == "handle_door" && handleShow == true)
+        {
+            handleShow = false;
+            //handle.enabled = false;
+            //aminate door opening;
         }
         #endregion
         #region Key Pickup
         if (collision.gameObject.tag == "key")
         {
             keyShow = true;
-            key.enabled = true;
+            //key.enabled = true;
             Destroy(collision.gameObject);
         }
         #endregion
