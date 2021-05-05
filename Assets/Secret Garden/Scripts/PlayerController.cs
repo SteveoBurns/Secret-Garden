@@ -28,7 +28,8 @@ public class PlayerController : MonoBehaviour
 
     [Header("Key Elements")]
     [SerializeField] private Image key;
-    private bool keyShow = false;
+    [SerializeField] private GameObject gameKey;
+    private bool hasKey = false;
 
     
     
@@ -111,9 +112,15 @@ public class PlayerController : MonoBehaviour
         }
         #endregion
         #region Key Pickup
+        if (petalsCollected == 3) //might have to set this to 9 if it persists though scene loads??
+        {
+            gameKey.SetActive(true);
+        }
+        
         if (collision.gameObject.tag == "key")
         {
-            keyShow = true;
+            hasKey = true;
+            gameKey.SetActive(false);
             //key.enabled = true;
             Destroy(collision.gameObject);
         }
@@ -121,7 +128,7 @@ public class PlayerController : MonoBehaviour
         #region End Level Doors
         if (collision.gameObject.tag == "door1")
         {
-            if (keyShow == true && petalsCollected == 3)
+            if (hasKey == true && petalsCollected == 3)//might not need petals collected variable here?
             {
                 // animation door
                 // play door sound
@@ -132,7 +139,7 @@ public class PlayerController : MonoBehaviour
         }
         if (collision.gameObject.tag == "door2")
         {
-            if (keyShow == true && petalsCollected == 3) //might need to be 6, not sure if value will carry through load scenes??
+            if (hasKey == true && petalsCollected == 3) //might need to be 6, not sure if value will carry through load scenes??
             {
                 // animation door
                 // play door sound
@@ -148,7 +155,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameKey.SetActive(false);
     }
 
     // Update is called once per frame
