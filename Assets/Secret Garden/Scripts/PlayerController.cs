@@ -103,9 +103,11 @@ public class PlayerController : MonoBehaviour
         #region Handle Doors
         if (collision.gameObject.tag == "handle_door" && handleShow == true)
         {
+            print("door collision");
             handleShow = false;
             //handle.enabled = false;
             //aminate door opening;
+            Destroy(collision.gameObject);
         }
         #endregion
         #region Key Pickup
