@@ -6,6 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Secret Garden/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Secret Garden/Scenes/Start Letter.unity
+    guid: c988da825ce891449adafc0f708d957a
+  - enabled: 1
+    path: Assets/Secret Garden/Scenes/LevelTest.unity
+    guid: c574a30e2e5a1ee428aa932008e18d8c
+  - enabled: 1
+    path: Assets/Secret Garden/Scenes/Level 2 Test.unity
+    guid: 412d31384453c444fa23d35023afaf90
+  - enabled: 1
+    path: Assets/Secret Garden/Scenes/Level 3 Test.unity
+    guid: 82192bf78e64a744d9afa48cd29dca79
+  - enabled: 1
+    path: Assets/Secret Garden/Scenes/End Letter.unity
+    guid: e81c779a47ae4ba4e8613b415f438dbf
   m_configObjects: {}
