@@ -18,6 +18,7 @@ TagManager:
   - handle
   - key
   - handle_door
+  - End Door
   layers:
   - Default
   - TransparentFX

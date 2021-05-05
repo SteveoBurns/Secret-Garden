@@ -126,9 +126,9 @@ public class PlayerController : MonoBehaviour
         }
         #endregion
         #region End Level Doors
-        if (collision.gameObject.tag == "door1")
+        if (collision.gameObject.tag == "End Door")
         {
-            if (hasKey == true && petalsCollected == 3)//might not need petals collected variable here?
+            if (hasKey == true)
             {
                 // animation door
                 // play door sound
@@ -137,17 +137,7 @@ public class PlayerController : MonoBehaviour
                 // Load next scene
             }
         }
-        if (collision.gameObject.tag == "door2")
-        {
-            if (hasKey == true && petalsCollected == 3) //might need to be 6, not sure if value will carry through load scenes??
-            {
-                // animation door
-                // play door sound
-                // fade to black
-
-                // Load next scene
-            }
-        }
+        
         #endregion
     }
 
