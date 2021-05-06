@@ -17,12 +17,14 @@ public class UIManager : MonoBehaviour
 
     public AudioMixer masterAudio;
     public AudioSource musicSource;
+    public AudioSource sfxsource;
     public float volume;
     public Slider volumeSlider;
     float masterVolume;
     float musicVolume;
     public bool muted;
     public AudioClip[] levelMusic;
+    public AudioClip[] soundEffects;
 
     public Text timerUI;
     int minutes;
