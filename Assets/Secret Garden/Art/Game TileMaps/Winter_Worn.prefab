@@ -430,7 +430,7 @@ GameObject:
   - component: {fileID: 632905894794759375}
   - component: {fileID: 78497897731253873}
   - component: {fileID: -7839445813415158042}
-  m_Layer: 31
+  m_Layer: 0
   m_Name: Winter_Worn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
