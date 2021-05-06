@@ -14,7 +14,7 @@ public class UIManager : MonoBehaviour
     public Text MasterVolumePercent;
     public Text MusicVolumePercent;
 
-    public AudioMixer GameMusic;
+    public AudioMixer masterAudio;
     public float volumeLevel;
     public float setVolumeLevel;
     public Slider volumeSlider;
@@ -32,8 +32,13 @@ public class UIManager : MonoBehaviour
     string niceTime;
     int timerTotal;
 
+    public Dropdown resolution;
+    public Resolution[] resolutions;
+
     private void Start()
     {
+        Screen.fullScreen = true;
+
         PauseMenu.SetActive(false);
         OptionsMenu.SetActive(false);
 
@@ -50,6 +55,25 @@ public class UIManager : MonoBehaviour
             PetalPanel.SetActive(false);
             TimerPanel.SetActive(false);
         }
+
+        resolutions = Screen.resolutions;
+        resolution.ClearOptions();
+        List<string> options = new List<string>();
+        int currentResolutionIndex = 0;
+
+        for (int i = 0; i < resolutions.Length; i++)
+        {
+            string option = resolutions[i].width + " x " + resolutions[i].height;
+            options.Add(option);
+
+            if(resolutions[i].width == Screen.currentResolution.width && resolutions[i].height == Screen.currentResolution.height)
+            {
+                currentResolutionIndex = i;
+            }
+        }
+        resolution.AddOptions(options);
+        resolution.value = currentResolutionIndex;
+        resolution.RefreshShownValue();
     }
 
     private void Update()
@@ -146,8 +170,9 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 1;
     }
 
-    public void Music()
+    public void Music(float volume)
     {
+        masterAudio.SetFloat("volume", volume);
         MasterVolumePercent.text = (masterVolume / 1f).ToString() + "%";
         MusicVolumePercent.text  = (musicVolume / 1f).ToString() + "%";
     }
@@ -171,4 +196,21 @@ public class UIManager : MonoBehaviour
     {
         timerTotal = timer + timerTotal;
     }
+
+    public void SetResolution(int resolutionIndex)
+    {
+        Resolution res = resolutions[resolutionIndex];
+        Screen.SetResolution(res.width, res.height, Screen.fullScreen);
+    }
+
+    public void FullScreen(bool isFullScreen)
+    {
+        Screen.fullScreen = isFullScreen;
+    }
+
+    public void Quality(int qualityIndex)
+    {
+        QualitySettings.SetQualityLevel(qualityIndex);
+    }
+
 }
