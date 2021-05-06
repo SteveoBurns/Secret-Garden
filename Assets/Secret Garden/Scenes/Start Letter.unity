@@ -2030,6 +2030,10 @@ PrefabInstance:
       value: 7.5915
       objectReference: {fileID: 0}
     - target: {fileID: 252291313765496593, guid: 51ce2fa10ded4a442b1c8431d07b5624, type: 3}
+      propertyPath: m_Value
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 252291313765496593, guid: 51ce2fa10ded4a442b1c8431d07b5624, type: 3}
       propertyPath: m_MaxValue
       value: 20
       objectReference: {fileID: 0}
@@ -2039,7 +2043,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 252291313765496593, guid: 51ce2fa10ded4a442b1c8431d07b5624, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 252291313765496593, guid: 51ce2fa10ded4a442b1c8431d07b5624, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -2056,11 +2060,11 @@ PrefabInstance:
     - target: {fileID: 252291313765496593, guid: 51ce2fa10ded4a442b1c8431d07b5624, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1212216311}
+      objectReference: {fileID: 1427132538}
     - target: {fileID: 252291313765496593, guid: 51ce2fa10ded4a442b1c8431d07b5624, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 576916852}
+      objectReference: {fileID: 1427132538}
     - target: {fileID: 252291313765496593, guid: 51ce2fa10ded4a442b1c8431d07b5624, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
@@ -2071,11 +2075,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 252291313765496593, guid: 51ce2fa10ded4a442b1c8431d07b5624, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: set_volume
+      value: Music
       objectReference: {fileID: 0}
     - target: {fileID: 252291313765496593, guid: 51ce2fa10ded4a442b1c8431d07b5624, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: set_volume
+      value: Music
       objectReference: {fileID: 0}
     - target: {fileID: 252291313765496593, guid: 51ce2fa10ded4a442b1c8431d07b5624, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
@@ -2083,11 +2087,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 252291313765496593, guid: 51ce2fa10ded4a442b1c8431d07b5624, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UnityEngine.AudioSource, UnityEngine
+      value: UIManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 252291313765496593, guid: 51ce2fa10ded4a442b1c8431d07b5624, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: UnityEngine.AudioSource, UnityEngine
+      value: UIManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 252291313765496593, guid: 51ce2fa10ded4a442b1c8431d07b5624, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
@@ -2277,6 +2281,38 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.31764707
       objectReference: {fileID: 0}
+    - target: {fileID: 5555105257631643139, guid: 51ce2fa10ded4a442b1c8431d07b5624, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555105257631643139, guid: 51ce2fa10ded4a442b1c8431d07b5624, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 348181f6024a03e408357382578d221b, type: 3}
+    - target: {fileID: 5555105257631643139, guid: 51ce2fa10ded4a442b1c8431d07b5624, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555105257965894262, guid: 51ce2fa10ded4a442b1c8431d07b5624, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -146
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555105257965894262, guid: 51ce2fa10ded4a442b1c8431d07b5624, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -265
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555105257965894263, guid: 51ce2fa10ded4a442b1c8431d07b5624, type: 3}
+      propertyPath: m_Type
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555105257965894263, guid: 51ce2fa10ded4a442b1c8431d07b5624, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555105257965894263, guid: 51ce2fa10ded4a442b1c8431d07b5624, type: 3}
+      propertyPath: m_FillAmount
+      value: 0.975
+      objectReference: {fileID: 0}
     - target: {fileID: 5555105258521149361, guid: 51ce2fa10ded4a442b1c8431d07b5624, type: 3}
       propertyPath: m_Name
       value: UIelementGrouper
@@ -2344,7 +2380,7 @@ PrefabInstance:
     - target: {fileID: 5555105258558296588, guid: 51ce2fa10ded4a442b1c8431d07b5624, type: 3}
       propertyPath: SFXVolumePercent
       value: 
-      objectReference: {fileID: 1840006858}
+      objectReference: {fileID: 1006928079}
     - target: {fileID: 5555105258558296588, guid: 51ce2fa10ded4a442b1c8431d07b5624, type: 3}
       propertyPath: MusicVolumePercent
       value: 
@@ -2469,6 +2505,10 @@ PrefabInstance:
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1427132538}
+    - target: {fileID: 7807313343079472383, guid: 51ce2fa10ded4a442b1c8431d07b5624, type: 3}
+      propertyPath: m_Value
+      value: -34.9
+      objectReference: {fileID: 0}
     - target: {fileID: 7807313343079472383, guid: 51ce2fa10ded4a442b1c8431d07b5624, type: 3}
       propertyPath: m_MaxValue
       value: 20
