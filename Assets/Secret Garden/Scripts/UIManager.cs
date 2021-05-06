@@ -42,6 +42,8 @@ public class UIManager : MonoBehaviour
     {
         Screen.fullScreen = true;
 
+        Music(20);
+
         PauseMenu.SetActive(false);
         OptionsMenu.SetActive(false);
 
