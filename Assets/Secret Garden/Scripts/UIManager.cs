@@ -74,10 +74,10 @@ public class UIManager : MonoBehaviour
                 currentResolutionIndex = i;
             }
         }
+
         resolution.AddOptions(options);
         resolution.value = currentResolutionIndex;
         resolution.RefreshShownValue();
-
     }
 
     private void Update()
