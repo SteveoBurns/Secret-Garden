@@ -10,7 +10,7 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
 
-    [Header("Petal UI Elements")]
+    [Header("Petal UI Elements")]    
     [SerializeField] private Image petal1_1;
     [SerializeField] private Image petal1_2;
     [SerializeField] private Image petal1_3;
@@ -112,7 +112,7 @@ public class PlayerController : MonoBehaviour
         }
         #endregion
         #region Key Pickup
-        if (petalsCollected == 3) //might have to set this to 9 if it persists though scene loads??
+        if (petalsCollected == 3) 
         {
             gameKey.SetActive(true);
         }
@@ -122,7 +122,7 @@ public class PlayerController : MonoBehaviour
             hasKey = true;
             gameKey.SetActive(false);
             //key.enabled = true;
-            Destroy(collision.gameObject);
+            //Destroy(collision.gameObject);
         }
         #endregion
         #region End Level Doors
