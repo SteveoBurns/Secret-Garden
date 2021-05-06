@@ -13,15 +13,16 @@ public class UIManager : MonoBehaviour
     public GameObject TimerPanel;
     public Text MasterVolumePercent;
     public Text MusicVolumePercent;
+    public Text SFXVolumePercent;
 
     public AudioMixer masterAudio;
-    public float volumeLevel;
-    public float setVolumeLevel;
+    public AudioSource musicSource;
+    public float volume;
     public Slider volumeSlider;
-    float mutedVolume = 0;
     float masterVolume;
     float musicVolume;
     public bool muted;
+    public AudioClip[] levelMusic;
 
     public Text timerUI;
     int minutes;
@@ -42,7 +43,9 @@ public class UIManager : MonoBehaviour
         PauseMenu.SetActive(false);
         OptionsMenu.SetActive(false);
 
-        timerStart = 360f;
+        musicSource = GetComponent<AudioSource>();
+        musicSource.clip = levelMusic[0];
+        musicSource.Play();
 
         nextScene = 0;
 
@@ -74,6 +77,7 @@ public class UIManager : MonoBehaviour
         resolution.AddOptions(options);
         resolution.value = currentResolutionIndex;
         resolution.RefreshShownValue();
+
     }
 
     private void Update()
@@ -147,20 +151,26 @@ public class UIManager : MonoBehaviour
         switch (nextScene)
         {
             case 1:
+                musicSource.clip = levelMusic[1];
                 timerStart = 300;
                 break;
 
             case 2:
+                musicSource.clip = levelMusic[2];
                 timerStart = 360;
                 break;
 
             case 3:
+                musicSource.clip = levelMusic[3];
                 timerStart = 420;
                 break;
             case 4:
+                musicSource.clip = levelMusic[0];
                 timerStart = timerTotal;
                 break;
         }
+
+        musicSource.Play();
 
     }
 
@@ -174,10 +184,13 @@ public class UIManager : MonoBehaviour
     {
         masterAudio.SetFloat("volume", volume);
 
-        MasterVolumePercent.text = (masterVolume / 1f).ToString() + "%";
-        MusicVolumePercent.text  = (musicVolume / 1f).ToString() + "%";
+        MasterVolumePercent.text = (masterVolume / 0.01f).ToString() + " %";
+        MusicVolumePercent.text  = (musicVolume / 0.01f).ToString() + " %";
+        SFXVolumePercent.text = (musicVolume / 0.01f).ToString() + " %";
+
     }
 
+    //Mute is currently not used and only mutes the audio Source
     public void Mute(bool isMuted)
     {
         if (isMuted)
