@@ -173,22 +173,20 @@ public class UIManager : MonoBehaviour
     public void Music(float volume)
     {
         masterAudio.SetFloat("volume", volume);
+
         MasterVolumePercent.text = (masterVolume / 1f).ToString() + "%";
         MusicVolumePercent.text  = (musicVolume / 1f).ToString() + "%";
     }
 
-    public void Mute()
+    public void Mute(bool isMuted)
     {
-        if(muted == false)
+        if (isMuted)
         {
-            volumeLevel = mutedVolume;
-            muted = true;
+            masterAudio.SetFloat("isMutedVolume", -80);
         }
-        
-        else if(muted == true)
+        else
         {
-            volumeLevel = setVolumeLevel;
-            muted = false;
+            masterAudio.SetFloat("isMutedVolume", 0);
         }
     }
 
