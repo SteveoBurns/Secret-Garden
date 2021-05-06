@@ -186,9 +186,9 @@ public class UIManager : MonoBehaviour
 
     public void Music(float volume)
     {
-        masterAudio.SetFloat("volume", volume);
+        masterAudio.SetFloat("masterVolume", volume);
 
-        MasterVolumePercent.text = (masterVolume / 0.01f).ToString() + " %";
+        MasterVolumePercent.text = (volume / 0.01f).ToString() + " %";
         MusicVolumePercent.text  = (musicVolume / 0.01f).ToString() + " %";
         SFXVolumePercent.text = (musicVolume / 0.01f).ToString() + " %";
 
