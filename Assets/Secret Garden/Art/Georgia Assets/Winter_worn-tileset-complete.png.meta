@@ -1,0 +1,664 @@
+fileFormatVersion: 2
+guid: 8e75dde1c27a1b340886db0ce794d18e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3334645764756298669
+    second: Winter_worn-tileset-complete_0
+  - first:
+      213: -1338013612684363962
+    second: Winter_worn-tileset-complete_1
+  - first:
+      213: 7374516205613439548
+    second: Winter_worn-tileset-complete_2
+  - first:
+      213: -2026818285672600395
+    second: Winter_worn-tileset-complete_3
+  - first:
+      213: -4999813794024816759
+    second: Winter_worn-tileset-complete_4
+  - first:
+      213: 6713239565121419378
+    second: Winter_worn-tileset-complete_5
+  - first:
+      213: 6557422779891937215
+    second: Winter_worn-tileset-complete_6
+  - first:
+      213: -7317216707463732780
+    second: Winter_worn-tileset-complete_7
+  - first:
+      213: 6859100495986483744
+    second: Winter_worn-tileset-complete_8
+  - first:
+      213: -4421208472800353194
+    second: Winter_worn-tileset-complete_9
+  - first:
+      213: 1300320340653580374
+    second: Winter_worn-tileset-complete_10
+  - first:
+      213: 7608001701317142192
+    second: Winter_worn-tileset-complete_11
+  - first:
+      213: 4868731837772504982
+    second: Winter_worn-tileset-complete_12
+  - first:
+      213: 8328241564129965301
+    second: Winter_worn-tileset-complete_13
+  - first:
+      213: 609112554626054407
+    second: Winter_worn-tileset-complete_14
+  - first:
+      213: -5472406040415622592
+    second: Winter_worn-tileset-complete_15
+  - first:
+      213: 7722027142930465108
+    second: Winter_worn-tileset-complete_16
+  - first:
+      213: 3636389527456885245
+    second: Winter_worn-tileset-complete_17
+  - first:
+      213: 6758995964959131034
+    second: Winter_worn-tileset-complete_18
+  - first:
+      213: -1040191818361115280
+    second: Winter_worn-tileset-complete_19
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Winter_worn-tileset-complete_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 388
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -64, y: -64}
+        - {x: -64, y: 64}
+        - {x: 64, y: 64}
+        - {x: 64, y: 43}
+        - {x: -42, y: 43}
+        - {x: -41, y: -64}
+      tessellationDetail: 0
+      bones: []
+      spriteID: dab5f04c7aa074e20800000000000000
+      internalID: 3334645764756298669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Winter_worn-tileset-complete_1
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 388
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -64, y: -64}
+        - {x: -64, y: 64}
+        - {x: -45, y: 64}
+        - {x: -44, y: -42}
+        - {x: 63, y: -43}
+        - {x: 64, y: -64}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 647bf4755bb6e6de0800000000000000
+      internalID: -1338013612684363962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Winter_worn-tileset-complete_2
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 388
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 45, y: -64}
+        - {x: 45, y: 43}
+        - {x: -64, y: 43}
+        - {x: -64, y: 64}
+        - {x: 64, y: 64}
+        - {x: 64, y: -64}
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3a53f9ca6b875660800000000000000
+      internalID: 7374516205613439548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Winter_worn-tileset-complete_3
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 388
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -64, y: -64}
+        - {x: -64, y: -46}
+        - {x: 46, y: -46}
+        - {x: 45, y: 64}
+        - {x: 64, y: 64}
+        - {x: 64, y: -64}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bce73af18b4fd3e0800000000000000
+      internalID: -2026818285672600395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Winter_worn-tileset-complete_4
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 388
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -64, y: -64}
+        - {x: -64, y: 64}
+        - {x: -44, y: 64}
+        - {x: -43, y: -64}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98f7d0038d71d9ab0800000000000000
+      internalID: -4999813794024816759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Winter_worn-tileset-complete_5
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 259
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 42, y: -64}
+        - {x: 42, y: 64}
+        - {x: 64, y: 64}
+        - {x: 64, y: -64}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 278f823f0d73a2d50800000000000000
+      internalID: 6713239565121419378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Winter_worn-tileset-complete_6
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 259
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbf638d8645a00b50800000000000000
+      internalID: 6557422779891937215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Winter_worn-tileset-complete_7
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 259
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -64, y: -64}
+        - {x: -64, y: -46}
+        - {x: 64, y: -45}
+        - {x: 64, y: -64}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d1221f3c26047a90800000000000000
+      internalID: -7317216707463732780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Winter_worn-tileset-complete_8
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 259
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -64, y: 44}
+        - {x: -64, y: 64}
+        - {x: 64, y: 64}
+        - {x: 64, y: 43}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 022eafd5f8b603f50800000000000000
+      internalID: 6859100495986483744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Winter_worn-tileset-complete_9
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 259
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 654a9cc8156b4a2c0800000000000000
+      internalID: -4421208472800353194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Winter_worn-tileset-complete_10
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 130
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6502fded57aab0210800000000000000
+      internalID: 1300320340653580374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Winter_worn-tileset-complete_11
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 130
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b663990d3d059960800000000000000
+      internalID: 7608001701317142192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Winter_worn-tileset-complete_12
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 130
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 40, y: -64}
+        - {x: 41, y: -40}
+        - {x: 64, y: -40}
+        - {x: 64, y: -64}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69f90119fc5319340800000000000000
+      internalID: 4868731837772504982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Winter_worn-tileset-complete_13
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 130
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -64, y: -64}
+        - {x: -64, y: -39}
+        - {x: -40, y: -39}
+        - {x: -40, y: -64}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f43c91e39bd39370800000000000000
+      internalID: 8328241564129965301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Winter_worn-tileset-complete_14
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 130
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 40, y: 39}
+        - {x: 39, y: 64}
+        - {x: 64, y: 64}
+        - {x: 64, y: 39}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70977b624a0047800800000000000000
+      internalID: 609112554626054407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Winter_worn-tileset-complete_15
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -64, y: 39}
+        - {x: -64, y: 64}
+        - {x: -39, y: 64}
+        - {x: -39, y: 39}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04a235643bb1e04b0800000000000000
+      internalID: -5472406040415622592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Winter_worn-tileset-complete_16
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 1
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4518b4006c62a2b60800000000000000
+      internalID: 7722027142930465108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Winter_worn-tileset-complete_17
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 1
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 40, y: 40}
+        - {x: 39, y: 64}
+        - {x: 64, y: 64}
+        - {x: 64, y: 39}
+      tessellationDetail: 0
+      bones: []
+      spriteID: df9a401420d077230800000000000000
+      internalID: 3636389527456885245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Winter_worn-tileset-complete_18
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 1
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -64, y: 39}
+        - {x: -64, y: 64}
+        - {x: -40, y: 64}
+        - {x: -42, y: 39}
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9500b9f407cccd50800000000000000
+      internalID: 6758995964959131034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Winter_worn-tileset-complete_19
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 1
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07d61586d0f7091f0800000000000000
+      internalID: -1040191818361115280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

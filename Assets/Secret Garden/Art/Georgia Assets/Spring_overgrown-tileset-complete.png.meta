@@ -1,0 +1,656 @@
+fileFormatVersion: 2
+guid: a34dde5c4db889a4cb9c1e1082cec713
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7464521653111375208
+    second: Spring_overgrown-tileset-complete_0
+  - first:
+      213: -3842280145418493766
+    second: Spring_overgrown-tileset-complete_1
+  - first:
+      213: 932954645539999231
+    second: Spring_overgrown-tileset-complete_2
+  - first:
+      213: -6854041376919038402
+    second: Spring_overgrown-tileset-complete_3
+  - first:
+      213: 1799340534904785840
+    second: Spring_overgrown-tileset-complete_4
+  - first:
+      213: 4386550975785404575
+    second: Spring_overgrown-tileset-complete_5
+  - first:
+      213: -5069327905810138127
+    second: Spring_overgrown-tileset-complete_6
+  - first:
+      213: -6318535384537305068
+    second: Spring_overgrown-tileset-complete_7
+  - first:
+      213: 8801509224470655661
+    second: Spring_overgrown-tileset-complete_8
+  - first:
+      213: -3857162728927945964
+    second: Spring_overgrown-tileset-complete_9
+  - first:
+      213: -5921368309176269119
+    second: Spring_overgrown-tileset-complete_10
+  - first:
+      213: 8508047112524149487
+    second: Spring_overgrown-tileset-complete_11
+  - first:
+      213: 204901034429518524
+    second: Spring_overgrown-tileset-complete_12
+  - first:
+      213: -8428165428797807539
+    second: Spring_overgrown-tileset-complete_13
+  - first:
+      213: 526244496580306735
+    second: Spring_overgrown-tileset-complete_14
+  - first:
+      213: 7966517865533969634
+    second: Spring_overgrown-tileset-complete_15
+  - first:
+      213: 8893293932741464576
+    second: Spring_overgrown-tileset-complete_16
+  - first:
+      213: 3369706552688410351
+    second: Spring_overgrown-tileset-complete_17
+  - first:
+      213: -9043967964365544401
+    second: Spring_overgrown-tileset-complete_18
+  - first:
+      213: -2113693593204208201
+    second: Spring_overgrown-tileset-complete_19
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Spring_overgrown-tileset-complete_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 388
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -64, y: -64}
+        - {x: -64, y: 64}
+        - {x: 64, y: 64}
+        - {x: 64, y: 44}
+        - {x: -41, y: 45}
+        - {x: -45, y: -64}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8654aef05ee479760800000000000000
+      internalID: 7464521653111375208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spring_overgrown-tileset-complete_1
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 388
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -64, y: -64}
+        - {x: -64, y: 64}
+        - {x: -42, y: 64}
+        - {x: -42, y: -42}
+        - {x: 64, y: -42}
+        - {x: 64, y: -64}
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab06bc4a09a7daac0800000000000000
+      internalID: -3842280145418493766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spring_overgrown-tileset-complete_2
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 388
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 45, y: -64}
+        - {x: 45, y: 41}
+        - {x: -64, y: 42}
+        - {x: -64, y: 64}
+        - {x: 64, y: 64}
+        - {x: 64, y: -64}
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffd46fe9e4582fc00800000000000000
+      internalID: 932954645539999231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spring_overgrown-tileset-complete_3
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 388
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -64, y: -64}
+        - {x: -64, y: -42}
+        - {x: 42, y: -42}
+        - {x: 42, y: 64}
+        - {x: 64, y: 64}
+        - {x: 64, y: -64}
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3659e49ead81e0a0800000000000000
+      internalID: -6854041376919038402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spring_overgrown-tileset-complete_4
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 388
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -64, y: -64}
+        - {x: -64, y: 64}
+        - {x: -41, y: 64}
+        - {x: -40, y: -64}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bb06f4eeaa88f810800000000000000
+      internalID: 1799340534904785840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spring_overgrown-tileset-complete_5
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 259
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 42, y: -64}
+        - {x: 41, y: 64}
+        - {x: 64, y: 64}
+        - {x: 64, y: -64}
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9805dc1fd820ec30800000000000000
+      internalID: 4386550975785404575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spring_overgrown-tileset-complete_6
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 259
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fb363cc02126a9b0800000000000000
+      internalID: -5069327905810138127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spring_overgrown-tileset-complete_7
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 259
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -64, y: -64}
+        - {x: -64, y: -43}
+        - {x: 64, y: -43}
+        - {x: 64, y: -64}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 410fae77b8d0058a0800000000000000
+      internalID: -6318535384537305068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spring_overgrown-tileset-complete_8
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 259
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -64, y: 40}
+        - {x: -64, y: 64}
+        - {x: 64, y: 64}
+        - {x: 64, y: 40}
+      tessellationDetail: 0
+      bones: []
+      spriteID: da2b5ebd10e352a70800000000000000
+      internalID: 8801509224470655661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spring_overgrown-tileset-complete_9
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 259
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41b9f552fea987ac0800000000000000
+      internalID: -3857162728927945964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spring_overgrown-tileset-complete_10
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 130
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c60b4345e213dda0800000000000000
+      internalID: -5921368309176269119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spring_overgrown-tileset-complete_11
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 130
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe23a4275c7a21670800000000000000
+      internalID: 8508047112524149487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spring_overgrown-tileset-complete_12
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 130
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 39, y: -64}
+        - {x: 40, y: -38}
+        - {x: 64, y: -37}
+        - {x: 64, y: -64}
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb2184bb764f7d200800000000000000
+      internalID: 204901034429518524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spring_overgrown-tileset-complete_13
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 130
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -64, y: -64}
+        - {x: -64, y: -38}
+        - {x: -37, y: -38}
+        - {x: -37, y: -64}
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4467446234290b80800000000000000
+      internalID: -8428165428797807539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spring_overgrown-tileset-complete_14
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 130
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 39, y: 37}
+        - {x: 36, y: 64}
+        - {x: 64, y: 64}
+        - {x: 64, y: 32}
+      tessellationDetail: 0
+      bones: []
+      spriteID: f276cabd4989d4700800000000000000
+      internalID: 526244496580306735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spring_overgrown-tileset-complete_15
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -64, y: 39}
+        - {x: -64, y: 64}
+        - {x: -40, y: 64}
+        - {x: -40, y: 39}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e494ff4ac1ce8e60800000000000000
+      internalID: 7966517865533969634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spring_overgrown-tileset-complete_16
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 1
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 002113096b35b6b70800000000000000
+      internalID: 8893293932741464576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spring_overgrown-tileset-complete_17
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 1
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fee7c46914a93ce20800000000000000
+      internalID: 3369706552688410351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spring_overgrown-tileset-complete_18
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 1
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f24aafbad0f5d7280800000000000000
+      internalID: -9043967964365544401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spring_overgrown-tileset-complete_19
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 1
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bd4b0530e6aaa2e0800000000000000
+      internalID: -2113693593204208201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

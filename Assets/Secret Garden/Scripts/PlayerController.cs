@@ -10,7 +10,7 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
 
-    [Header("Petal UI Elements")]
+    [Header("Petal UI Elements")]    
     [SerializeField] private Image petal1_1;
     [SerializeField] private Image petal1_2;
     [SerializeField] private Image petal1_3;
@@ -28,7 +28,8 @@ public class PlayerController : MonoBehaviour
 
     [Header("Key Elements")]
     [SerializeField] private Image key;
-    private bool keyShow = false;
+    [SerializeField] private GameObject gameKey;
+    private bool hasKey = false;
 
     
     
@@ -103,23 +104,31 @@ public class PlayerController : MonoBehaviour
         #region Handle Doors
         if (collision.gameObject.tag == "handle_door" && handleShow == true)
         {
+            print("door collision");
             handleShow = false;
             //handle.enabled = false;
             //aminate door opening;
-        }
-        #endregion
-        #region Key Pickup
-        if (collision.gameObject.tag == "key")
-        {
-            keyShow = true;
-            //key.enabled = true;
             Destroy(collision.gameObject);
         }
         #endregion
+        #region Key Pickup
+        if (petalsCollected == 3) 
+        {
+            gameKey.SetActive(true);
+        }
+        
+        if (collision.gameObject.tag == "key")
+        {
+            hasKey = true;
+            gameKey.SetActive(false);
+            //key.enabled = true;
+            //Destroy(collision.gameObject);
+        }
+        #endregion
         #region End Level Doors
-        if (collision.gameObject.tag == "door1")
+        if (collision.gameObject.tag == "End Door")
         {
-            if (keyShow == true && petalsCollected == 3)
+            if (hasKey == true)
             {
                 // animation door
                 // play door sound
@@ -128,17 +137,7 @@ public class PlayerController : MonoBehaviour
                 // Load next scene
             }
         }
-        if (collision.gameObject.tag == "door2")
-        {
-            if (keyShow == true && petalsCollected == 3) //might need to be 6, not sure if value will carry through load scenes??
-            {
-                // animation door
-                // play door sound
-                // fade to black
-
-                // Load next scene
-            }
-        }
+        
         #endregion
     }
 
@@ -146,7 +145,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameKey.SetActive(false);
     }
 
     // Update is called once per frame

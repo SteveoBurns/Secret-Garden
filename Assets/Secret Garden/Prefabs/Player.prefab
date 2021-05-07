@@ -160,8 +160,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: 4adeaf2d2b1c7417e89f026626d8264f, type: 3}
-  m_Color: {r: 0.14391243, g: 0.91664153, b: 0.9245283, a: 1}
+  m_Sprite: {fileID: 1768599190028779529, guid: 708a40ada1288064dbf4871c1426e78e, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -258,3 +258,4 @@ MonoBehaviour:
   petal3_3: {fileID: 0}
   handle: {fileID: 0}
   key: {fileID: 0}
+  gameKey: {fileID: 0}
