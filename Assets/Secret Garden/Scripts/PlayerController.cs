@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 /// <summary>
@@ -9,6 +10,8 @@ using UnityEngine.UI;
 /// </summary>
 public class PlayerController : MonoBehaviour
 {
+    private HandleGate gate;
+    private EndLevelDoor endDoor;
 
     [Header("Petal UI Elements")]    
     [SerializeField] private Image petal1_1;
@@ -22,14 +25,16 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Image petal3_3;
     private int petalsCollected = 0;
 
-    [Header("Handle Elements")]
-    [SerializeField] private Image handle;
-    private bool handleShow = false;
+    [SerializeField] private GameObject finalFlower;
 
-    [Header("Key Elements")]
+    [Header("Handle UI Elements")]
+    [SerializeField] private Image handle;
+    [SerializeField] private bool handleShow = false;
+
+    [Header("Key UI Elements")]
     [SerializeField] private Image key;
     [SerializeField] private GameObject gameKey;
-    private bool hasKey = false;
+    [SerializeField] private bool hasKey = false;
 
     
     
@@ -107,8 +112,10 @@ public class PlayerController : MonoBehaviour
             print("door collision");
             handleShow = false;
             //handle.enabled = false;
-            //aminate door opening;
-            Destroy(collision.gameObject);
+            gate = collision.gameObject.GetComponent<HandleGate>();
+            gate.OpenGate();
+           
+            
         }
         #endregion
         #region Key Pickup
@@ -121,8 +128,9 @@ public class PlayerController : MonoBehaviour
         {
             hasKey = true;
             gameKey.SetActive(false);
+            finalFlower.SetActive(true);
             //key.enabled = true;
-            //Destroy(collision.gameObject);
+            
         }
         #endregion
         #region End Level Doors
@@ -130,15 +138,26 @@ public class PlayerController : MonoBehaviour
         {
             if (hasKey == true)
             {
-                // animation door
+
+                endDoor = collision.gameObject.GetComponent<EndLevelDoor>();
+                endDoor.OpenDoor();
+                
                 // play door sound
                 // fade to black
 
                 // Load next scene
             }
         }
-        
+
         #endregion
+        #region Final Flower
+        if (collision.gameObject.tag == "Final Flower") 
+        {
+            SceneManager.LoadScene("End Letter");
+        }
+        #endregion
+
+
     }
 
 
