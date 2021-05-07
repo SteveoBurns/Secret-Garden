@@ -54,7 +54,7 @@ AudioMixerController:
   - guid: f3cced1a3a472d94d930e2504bc75665
     name: musicVolume
   - guid: 790576ff767e8764e8249cea7988b2c1
-    name: isMuted
+    name: soundEffectsVolume
   m_AudioMixerGroupViews:
   - guids:
     - fdf2ff2236d581b42a0910925068b9fe

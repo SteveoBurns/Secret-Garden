@@ -11,20 +11,21 @@ public class UIManager : MonoBehaviour
     public GameObject OptionsMenu;
     public GameObject PetalPanel;
     public GameObject TimerPanel;
+
+    public GameObject[] petals;
+    int petalIndex;
+
     public Text MasterVolumePercent;
     public Text MusicVolumePercent;
     public Text SFXVolumePercent;
 
-    public AudioMixer masterAudio;
+    public AudioMixerGroup[] Audio;
     public AudioSource musicSource;
     public AudioSource sfxsource;
-    public float volume;
-    public Slider volumeSlider;
-    float masterVolume;
-    float musicVolume;
     public bool muted;
     public AudioClip[] levelMusic;
     public AudioClip[] soundEffects;
+    public Slider masterMixer;
 
     public Text timerUI;
     int minutes;
@@ -42,8 +43,6 @@ public class UIManager : MonoBehaviour
     {
         Screen.fullScreen = true;
 
-        Music(20);
-
         PauseMenu.SetActive(false);
         OptionsMenu.SetActive(false);
 
@@ -54,8 +53,6 @@ public class UIManager : MonoBehaviour
         nextScene = 0;
 
         muted = false;
-        masterVolume = 1;
-        musicVolume = 1;
 
         if (nextScene == 0)
         {
@@ -157,20 +154,24 @@ public class UIManager : MonoBehaviour
             case 1:
                 musicSource.clip = levelMusic[1];
                 timerStart = 300;
+                petalIndex = 0;
                 break;
 
             case 2:
                 musicSource.clip = levelMusic[2];
                 timerStart = 360;
+                petalIndex = 3;
                 break;
 
             case 3:
                 musicSource.clip = levelMusic[3];
                 timerStart = 420;
+                petalIndex = 6;
                 break;
             case 4:
                 musicSource.clip = levelMusic[0];
                 timerStart = timerTotal;
+                petalIndex = 9;
                 break;
         }
 
@@ -184,26 +185,30 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 1;
     }
 
-    public void Music(float volume)
+
+    public void MusicVolume(float musicVolume)
     {
-        masterAudio.SetFloat("masterVolume", volume);
-
-        MasterVolumePercent.text = (volume / 0.01f).ToString() + " %";
-        MusicVolumePercent.text  = (musicVolume / 0.01f).ToString() + " %";
-        SFXVolumePercent.text = (musicVolume / 0.01f).ToString() + " %";
-
+        Audio[0].audioMixer.SetFloat("musicVolume", musicVolume);
+        MusicVolumePercent.text = (Mathf.Round((musicVolume + 80) * 100f / 100)).ToString() + " %";
     }
+    public void SoundEffectsVolume(float soundEffectsVolume)
+    {
+        Audio[1].audioMixer.SetFloat("soundEffectsVolume", soundEffectsVolume);
+        SFXVolumePercent.text = (Mathf.Round((soundEffectsVolume + 80) * 100f / 100)).ToString() + " %";
+    }
+
+
 
     //Mute is currently not used and only mutes the audio Source
     public void Mute(bool isMuted)
     {
         if (isMuted)
         {
-            masterAudio.SetFloat("isMutedVolume", -80);
+            Audio[0].audioMixer.SetFloat("isMutedVolume", -80);
         }
         else
         {
-            masterAudio.SetFloat("isMutedVolume", 0);
+            Audio[0].audioMixer.SetFloat("isMutedVolume", 0);
         }
     }
 
@@ -226,6 +231,18 @@ public class UIManager : MonoBehaviour
     public void Quality(int qualityIndex)
     {
         QualitySettings.SetQualityLevel(qualityIndex);
+    }
+
+    void OnCollisionPetal(Collision2D collision)
+    {
+        
+
+        if(collision.gameObject.tag == "Petal")
+        {
+            petals[petalIndex].SetActive(true);
+        }
+        petalIndex++;
+        
     }
 
 }
