@@ -15,7 +15,6 @@ public class UIManager : MonoBehaviour
     public GameObject[] petals;
     int petalIndex;
 
-    public Text MasterVolumePercent;
     public Text MusicVolumePercent;
     public Text SFXVolumePercent;
 
@@ -199,7 +198,6 @@ public class UIManager : MonoBehaviour
 
 
 
-    //Mute is currently not used and only mutes the audio Source
     public void Mute(bool isMuted)
     {
         if (isMuted)
@@ -208,7 +206,7 @@ public class UIManager : MonoBehaviour
         }
         else
         {
-            Audio[0].audioMixer.SetFloat("isMutedVolume", 0);
+            Audio[0].audioMixer.SetFloat("isMutedVolume", 0 );
         }
     }
 
