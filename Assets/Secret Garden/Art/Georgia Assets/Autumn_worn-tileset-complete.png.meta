@@ -1,7 +1,67 @@
 fileFormatVersion: 2
 guid: d18d1c710c9f9ae4889d331dff9202cc
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 1889334669964344699
+    second: Autumn_worn-tileset-complete_0
+  - first:
+      213: 8529799907884976589
+    second: Autumn_worn-tileset-complete_1
+  - first:
+      213: -8852188530917387899
+    second: Autumn_worn-tileset-complete_2
+  - first:
+      213: -5221479284293309673
+    second: Autumn_worn-tileset-complete_3
+  - first:
+      213: 6426567343132172304
+    second: Autumn_worn-tileset-complete_4
+  - first:
+      213: 9115727761980353493
+    second: Autumn_worn-tileset-complete_5
+  - first:
+      213: -5879165283217102822
+    second: Autumn_worn-tileset-complete_6
+  - first:
+      213: 9067550517987641372
+    second: Autumn_worn-tileset-complete_7
+  - first:
+      213: 8583053942412081512
+    second: Autumn_worn-tileset-complete_8
+  - first:
+      213: -8100735909832425319
+    second: Autumn_worn-tileset-complete_9
+  - first:
+      213: -838823086403151043
+    second: Autumn_worn-tileset-complete_10
+  - first:
+      213: -2805844538125943165
+    second: Autumn_worn-tileset-complete_11
+  - first:
+      213: 6024008164493418780
+    second: Autumn_worn-tileset-complete_12
+  - first:
+      213: -6389089797875109200
+    second: Autumn_worn-tileset-complete_13
+  - first:
+      213: -5586231346723976945
+    second: Autumn_worn-tileset-complete_14
+  - first:
+      213: 8442813224151406614
+    second: Autumn_worn-tileset-complete_15
+  - first:
+      213: -6294253518996042824
+    second: Autumn_worn-tileset-complete_16
+  - first:
+      213: -6193894723317693614
+    second: Autumn_worn-tileset-complete_17
+  - first:
+      213: 5444693608346743589
+    second: Autumn_worn-tileset-complete_18
+  - first:
+      213: 1178823217198732958
+    second: Autumn_worn-tileset-complete_19
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -41,12 +101,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 128
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,9 +135,509 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Autumn_worn-tileset-complete_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 388
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -43, y: -64}
+        - {x: -64, y: -64}
+        - {x: -64, y: 64}
+        - {x: 64, y: 64}
+        - {x: 64, y: 42}
+        - {x: -41, y: 43}
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7dfd094fd3483a10800000000000000
+      internalID: 1889334669964344699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Autumn_worn-tileset-complete_1
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 388
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -64, y: -64}
+        - {x: -64, y: 64}
+        - {x: -42, y: 64}
+        - {x: -42, y: -45}
+        - {x: 64, y: -45}
+        - {x: 64, y: -64}
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc9c4aac2dfef5670800000000000000
+      internalID: 8529799907884976589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Autumn_worn-tileset-complete_2
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 388
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 42, y: -64}
+        - {x: 43, y: 42}
+        - {x: -64, y: 43}
+        - {x: -64, y: 64}
+        - {x: 64, y: 64}
+        - {x: 64, y: -64}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 581d1e99e65b62580800000000000000
+      internalID: -8852188530917387899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Autumn_worn-tileset-complete_3
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 388
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -64, y: -64}
+        - {x: -64, y: -47}
+        - {x: 44, y: -46}
+        - {x: 44, y: 64}
+        - {x: 64, y: 64}
+        - {x: 64, y: -64}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71be2a961449987b0800000000000000
+      internalID: -5221479284293309673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Autumn_worn-tileset-complete_4
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 388
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -64, y: -64}
+        - {x: -64, y: 64}
+        - {x: -43, y: 64}
+        - {x: -43, y: -64}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 010e48cf2f0cf2950800000000000000
+      internalID: 6426567343132172304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Autumn_worn-tileset-complete_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 259
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 45, y: -64}
+        - {x: 46, y: 64}
+        - {x: 64, y: 64}
+        - {x: 64, y: -64}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5db61023a12918e70800000000000000
+      internalID: 9115727761980353493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Autumn_worn-tileset-complete_6
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 259
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a182906f252096ea0800000000000000
+      internalID: -5879165283217102822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Autumn_worn-tileset-complete_7
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 259
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -64, y: -64}
+        - {x: -64, y: -41}
+        - {x: 64, y: -42}
+        - {x: 64, y: -64}
+      tessellationDetail: 0
+      bones: []
+      spriteID: c180097772966dd70800000000000000
+      internalID: 9067550517987641372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Autumn_worn-tileset-complete_8
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 259
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -64, y: 43}
+        - {x: -64, y: 64}
+        - {x: 64, y: 64}
+        - {x: 64, y: 44}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 869fc7de5122d1770800000000000000
+      internalID: 8583053942412081512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Autumn_worn-tileset-complete_9
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 259
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 990003b0c97649f80800000000000000
+      internalID: -8100735909832425319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Autumn_worn-tileset-complete_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 130
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3b1b81e8d6eb54f0800000000000000
+      internalID: -838823086403151043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Autumn_worn-tileset-complete_11
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 130
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38e78023243af09d0800000000000000
+      internalID: -2805844538125943165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Autumn_worn-tileset-complete_12
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 130
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 40, y: -64}
+        - {x: 42, y: -44}
+        - {x: 64, y: -39}
+        - {x: 64, y: -64}
+      tessellationDetail: 0
+      bones: []
+      spriteID: c11eea05283999350800000000000000
+      internalID: 6024008164493418780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Autumn_worn-tileset-complete_13
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 130
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -64, y: -64}
+        - {x: -64, y: -40}
+        - {x: -43, y: -44}
+        - {x: -39, y: -64}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b2f49ffda46557a0800000000000000
+      internalID: -6389089797875109200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Autumn_worn-tileset-complete_14
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 130
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 43, y: 43}
+        - {x: 43, y: 64}
+        - {x: 64, y: 64}
+        - {x: 64, y: 42}
+      tessellationDetail: 0
+      bones: []
+      spriteID: f098d51ff28b972b0800000000000000
+      internalID: -5586231346723976945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Autumn_worn-tileset-complete_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -64, y: 39}
+        - {x: -64, y: 64}
+        - {x: -42, y: 64}
+        - {x: -44, y: 43}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 618d38a35e5ea2570800000000000000
+      internalID: 8442813224151406614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Autumn_worn-tileset-complete_16
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 1
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bb0df9d5c156a8a0800000000000000
+      internalID: -6294253518996042824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Autumn_worn-tileset-complete_17
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 1
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2538b78d09dda0aa0800000000000000
+      internalID: -6193894723317693614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Autumn_worn-tileset-complete_18
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 1
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 523f8545dff6f8b40800000000000000
+      internalID: 5444693608346743589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Autumn_worn-tileset-complete_19
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 1
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e961d1a68750c5010800000000000000
+      internalID: 1178823217198732958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
