@@ -14,11 +14,10 @@ public class PlayerController : MonoBehaviour
     private EndLevelDoor endDoor;
 
     [Header("Petal UI Elements")]    
-    [SerializeField] private Image[] petalGameObjects;
+    [SerializeField] public GameObject[] petalGameObjects;
     [SerializeField] static public int playerPetalIndex;
 
     public static int petalsCollected;
-
 
     [SerializeField] private GameObject finalFlower;
 
@@ -31,15 +30,17 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject gameKey;
     [SerializeField] private bool hasKey = false;
 
-    
-    
+    void Start()
+    {
+        playerPetalIndex = 0;
+        gameKey.SetActive(false);
+    }
+
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        print("collision");
-
         if(collision.gameObject.tag == "petal")
         {
-            switch (gameObject.name)
+            switch (collision.gameObject.name)
             {
                 case "petal1_1":
                     playerPetalIndex = 0;
@@ -77,7 +78,10 @@ public class PlayerController : MonoBehaviour
                     playerPetalIndex = 7;
                     break;
             }
-            playerPetalIndex = UIManager.petalIndex;
+
+            petalGameObjects[playerPetalIndex].SetActive(false);
+
+            UIManager.petalIndex = playerPetalIndex;
             UIManager.DisplayPetal(playerPetalIndex);
             petalsCollected++;  
         }
@@ -90,6 +94,7 @@ public class PlayerController : MonoBehaviour
             Destroy(collision.gameObject);
         }
         #endregion
+
         #region Handle Doors
         if (collision.gameObject.tag == "handle_door" && handleShow == true)
         {
@@ -102,21 +107,22 @@ public class PlayerController : MonoBehaviour
             
         }
         #endregion
+
         #region Key Pickup
+
         if (petalsCollected == 3) 
         {
             gameKey.SetActive(true);
         }
         
-        if (collision.gameObject.tag == "key")
+        if (collision.gameObject.tag == "key" && hasKey == false)
         {
             hasKey = true;
             gameKey.SetActive(false);
-            finalFlower.SetActive(true);
-            //key.enabled = true;
-            
+            finalFlower.SetActive(true); 
         }
         #endregion
+
         #region End Level Doors
         if (collision.gameObject.tag == "End Door")
         {
@@ -134,17 +140,13 @@ public class PlayerController : MonoBehaviour
         }
 
         #endregion
+
         #region Final Flower
         if (collision.gameObject.tag == "Final Flower") 
         {
             SceneManager.LoadScene("End Letter");
         }
         #endregion
-    }
 
-    void Start()
-    {
-        playerPetalIndex = 0;
-        gameKey.SetActive(false);
     }
 }

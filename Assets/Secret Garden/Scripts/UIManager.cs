@@ -313,5 +313,4 @@ public class UIManager : MonoBehaviour
     {
         InGamePetals[petalIndex].SetActive(true);
     }
-
 }
