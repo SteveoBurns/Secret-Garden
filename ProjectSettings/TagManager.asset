@@ -19,6 +19,7 @@ TagManager:
   - key
   - handle_door
   - End Door
+  - petal
   layers:
   - Default
   - TransparentFX

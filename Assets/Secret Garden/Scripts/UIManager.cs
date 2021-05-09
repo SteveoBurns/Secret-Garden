@@ -15,13 +15,11 @@ public class UIManager : MonoBehaviour
     public GameObject LetterPanel;
     public GameObject ContinueButton;
     public GameObject[] PetalGroups;
+    public GameObject[] UI_petals;
+    public static GameObject[] InGamePetals;
+    public static int petalIndex;
 
     public Scene[] scenes;
-
-    public GameObject player;
-
-    public GameObject[] UIpetals;
-    int petalIndex;
 
     public Text MusicVolumePercent;
     public Text SFXVolumePercent;
@@ -114,6 +112,8 @@ public class UIManager : MonoBehaviour
 
         string niceTime = string.Format("{0:0}:{1:00}", minutes, seconds);
         timerUI.text = "Time Remaining: " + niceTime;
+
+        InGamePetals = UI_petals;
     }
 
     public void PauseButton()
@@ -197,7 +197,7 @@ public class UIManager : MonoBehaviour
 
         musicSource.Play();
 
-        foreach(GameObject petal in UIpetals)
+        foreach(GameObject petal in UI_petals)
         {
             petal.SetActive(false);
         }
@@ -206,28 +206,34 @@ public class UIManager : MonoBehaviour
 
     public void RestartLevel()
     {
+        PauseMenu.SetActive(false);
         soundEffectsIndex = 0;
         SceneManager.LoadScene(nextScene);
         Time.timeScale = 1;
         timerOffset = Time.time;
 
-        foreach (GameObject petal in UIpetals)
+        foreach (GameObject petal in UI_petals)
         {
             switch (nextScene)
             {
                 case 1:
                     petal.SetActive(false);
+                    PlayerController.petalsCollected = 0;
                     break;
+
                 case 2:
                     if(petalIndex > 2)
                     {
                         petal.SetActive(false);
+                        PlayerController.petalsCollected = 3;
                     }
                     break;
+
                 case 3:
                     if (petalIndex > 5)
                     {
                         petal.SetActive(false);
+                        PlayerController.petalsCollected = 6;
                     }
                     break;
             }
@@ -303,12 +309,9 @@ public class UIManager : MonoBehaviour
         QualitySettings.SetQualityLevel(qualityIndex);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    public static void DisplayPetal(int petalIndex)
     {
-        if(collision.gameObject.name == "petal1_1")
-        {
-            Debug.Log("WORK DAMMIT");
-            UIpetals[0].SetActive(true);
-        }
+        InGamePetals[petalIndex].SetActive(true);
     }
+
 }

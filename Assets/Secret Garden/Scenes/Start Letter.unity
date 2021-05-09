@@ -1343,6 +1343,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1859082789016367073, guid: 51ce2fa10ded4a442b1c8431d07b5624, type: 3}
       propertyPath: UIpetals.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1859082789016367073, guid: 51ce2fa10ded4a442b1c8431d07b5624, type: 3}
+      propertyPath: UI_petals.Array.size
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1859082789016367073, guid: 51ce2fa10ded4a442b1c8431d07b5624, type: 3}
@@ -1391,6 +1395,42 @@ PrefabInstance:
       objectReference: {fileID: 1163987549}
     - target: {fileID: 1859082789016367073, guid: 51ce2fa10ded4a442b1c8431d07b5624, type: 3}
       propertyPath: UIpetals.Array.data[2]
+      value: 
+      objectReference: {fileID: 251402338}
+    - target: {fileID: 1859082789016367073, guid: 51ce2fa10ded4a442b1c8431d07b5624, type: 3}
+      propertyPath: UIpetals.Array.data[3]
+      value: 
+      objectReference: {fileID: 251402338}
+    - target: {fileID: 1859082789016367073, guid: 51ce2fa10ded4a442b1c8431d07b5624, type: 3}
+      propertyPath: UIpetals.Array.data[4]
+      value: 
+      objectReference: {fileID: 251402338}
+    - target: {fileID: 1859082789016367073, guid: 51ce2fa10ded4a442b1c8431d07b5624, type: 3}
+      propertyPath: UIpetals.Array.data[5]
+      value: 
+      objectReference: {fileID: 251402338}
+    - target: {fileID: 1859082789016367073, guid: 51ce2fa10ded4a442b1c8431d07b5624, type: 3}
+      propertyPath: UIpetals.Array.data[6]
+      value: 
+      objectReference: {fileID: 251402338}
+    - target: {fileID: 1859082789016367073, guid: 51ce2fa10ded4a442b1c8431d07b5624, type: 3}
+      propertyPath: UIpetals.Array.data[7]
+      value: 
+      objectReference: {fileID: 251402338}
+    - target: {fileID: 1859082789016367073, guid: 51ce2fa10ded4a442b1c8431d07b5624, type: 3}
+      propertyPath: UIpetals.Array.data[8]
+      value: 
+      objectReference: {fileID: 251402338}
+    - target: {fileID: 1859082789016367073, guid: 51ce2fa10ded4a442b1c8431d07b5624, type: 3}
+      propertyPath: UI_petals.Array.data[0]
+      value: 
+      objectReference: {fileID: 763058615}
+    - target: {fileID: 1859082789016367073, guid: 51ce2fa10ded4a442b1c8431d07b5624, type: 3}
+      propertyPath: UI_petals.Array.data[1]
+      value: 
+      objectReference: {fileID: 1163987549}
+    - target: {fileID: 1859082789016367073, guid: 51ce2fa10ded4a442b1c8431d07b5624, type: 3}
+      propertyPath: UI_petals.Array.data[2]
       value: 
       objectReference: {fileID: 251402338}
     - target: {fileID: 1859082789016367073, guid: 51ce2fa10ded4a442b1c8431d07b5624, type: 3}

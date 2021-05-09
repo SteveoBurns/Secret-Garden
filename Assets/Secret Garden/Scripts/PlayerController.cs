@@ -14,16 +14,11 @@ public class PlayerController : MonoBehaviour
     private EndLevelDoor endDoor;
 
     [Header("Petal UI Elements")]    
-    [SerializeField] private Image petal1_1;
-    [SerializeField] private Image petal1_2;
-    [SerializeField] private Image petal1_3;
-    [SerializeField] private Image petal2_1;
-    [SerializeField] private Image petal2_2;
-    [SerializeField] private Image petal2_3;
-    [SerializeField] private Image petal3_1;
-    [SerializeField] private Image petal3_2;
-    [SerializeField] private Image petal3_3;
-    private int petalsCollected = 0;
+    [SerializeField] private Image[] petalGameObjects;
+    [SerializeField] static public int playerPetalIndex;
+
+    public static int petalsCollected;
+
 
     [SerializeField] private GameObject finalFlower;
 
@@ -38,66 +33,55 @@ public class PlayerController : MonoBehaviour
 
     
     
-    private void OnCollisionEnter2D(Collision2D collision)
+    public void OnCollisionEnter2D(Collision2D collision)
     {
-        //have to enable all images when I have the HUD scene.
         print("collision");
-        #region Petal PickUps
-        if (collision.gameObject.tag == "petal1_1")
+
+        if(collision.gameObject.tag == "petal")
         {
-            //petal1_1.enabled = true;
-            petalsCollected += 1;
-            Destroy(collision.gameObject);
+            switch (gameObject.name)
+            {
+                case "petal1_1":
+                    playerPetalIndex = 0;
+                    break;
+
+                case "petal1_2":
+                    playerPetalIndex = 1;
+                    break;
+
+                case "petal1_3":
+                    playerPetalIndex = 2;
+                    break;
+
+                case "petal2_1":
+                    playerPetalIndex = 3;
+                    break;
+
+                case "petal2_2":
+                    playerPetalIndex = 4;
+                    break;
+
+                case "petal2_3":
+                    playerPetalIndex = 5;
+                    break;
+
+                case "petal3_1":
+                    playerPetalIndex = 6;
+                    break;
+
+                case "petal3_2":
+                    playerPetalIndex = 7;
+                    break;
+
+                case "petal3_3":
+                    playerPetalIndex = 7;
+                    break;
+            }
+            playerPetalIndex = UIManager.petalIndex;
+            UIManager.DisplayPetal(playerPetalIndex);
+            petalsCollected++;  
         }
-        if (collision.gameObject.tag == "petal1_2")
-        {
-            //petal1_2.enabled = true;
-            petalsCollected += 1;
-            Destroy(collision.gameObject);
-        }
-        if (collision.gameObject.tag == "petal1_3")
-        {
-            //petal1_3.enabled = true;
-            petalsCollected += 1;
-            Destroy(collision.gameObject);
-        }
-        if (collision.gameObject.tag == "petal2_1")
-        {
-           // petal2_1.enabled = true;
-            petalsCollected += 1;
-            Destroy(collision.gameObject);
-        }
-        if (collision.gameObject.tag == "petal2_2")
-        {
-            //petal2_2.enabled = true;
-            petalsCollected += 1;
-            Destroy(collision.gameObject);
-        }
-        if (collision.gameObject.tag == "petal2_3")
-        {
-            //petal2_3.enabled = true;
-            petalsCollected += 1;
-            Destroy(collision.gameObject);
-        }
-        if (collision.gameObject.tag == "petal3_1")
-        {
-            //petal3_1.enabled = true;
-            petalsCollected += 1;
-            Destroy(collision.gameObject);
-        }
-        if (collision.gameObject.tag == "petal3_2")
-        {
-            //petal3_2.enabled = true;
-            petalsCollected += 1;
-            Destroy(collision.gameObject);
-        }
-        if (collision.gameObject.tag == "petal3_3")
-        {
-            //petal3_3.enabled = true;
-            petalsCollected += 1;
-            Destroy(collision.gameObject);
-        }
-        #endregion
+
         #region Handle PickUp
         if (collision.gameObject.tag=="handle")
         {
@@ -156,27 +140,11 @@ public class PlayerController : MonoBehaviour
             SceneManager.LoadScene("End Letter");
         }
         #endregion
-
-
     }
 
-
-    // Start is called before the first frame update
     void Start()
     {
+        playerPetalIndex = 0;
         gameKey.SetActive(false);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-
-
-
-
-
-
 }
