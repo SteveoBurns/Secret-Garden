@@ -44,12 +44,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f2c7afeb91c8b1459abdc261624afa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UIManagerObject: {fileID: 0}
   PauseMenu: {fileID: 2517460387981498622, guid: 215fcef124fd26c4596c9c616154c276, type: 3}
   OptionsMenu: {fileID: 3211924497934825821, guid: 6bc7390f31e1a0c4da5184c16b126527, type: 3}
   PetalPanel: {fileID: 0}
   TimerPanel: {fileID: 0}
-  petals: []
-  MasterVolumePercent: {fileID: 0}
+  LetterPanel: {fileID: 0}
+  ContinueButton: {fileID: 0}
+  PetalGroups: []
+  scenes: []
+  player: {fileID: 0}
+  petals:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   MusicVolumePercent: {fileID: 0}
   SFXVolumePercent: {fileID: 0}
   Audio: []
@@ -58,7 +72,6 @@ MonoBehaviour:
   muted: 0
   levelMusic: []
   soundEffects: []
-  masterMixer: {fileID: 0}
   timerUI: {fileID: 0}
   resolution: {fileID: 0}
 --- !u!1 &6955234844314572696

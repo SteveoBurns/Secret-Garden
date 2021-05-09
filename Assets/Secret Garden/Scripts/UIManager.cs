@@ -20,7 +20,7 @@ public class UIManager : MonoBehaviour
 
     public GameObject player;
 
-    public GameObject[] petals;
+    public GameObject[] UIpetals;
     int petalIndex;
 
     public Text MusicVolumePercent;
@@ -99,7 +99,6 @@ public class UIManager : MonoBehaviour
         {
             PauseButton();
         }
-
 
         int minutes = Mathf.FloorToInt(timer / 60F);
         int seconds = Mathf.FloorToInt(timer - minutes * 60);
@@ -198,6 +197,11 @@ public class UIManager : MonoBehaviour
 
         musicSource.Play();
 
+        foreach(GameObject petal in UIpetals)
+        {
+            petal.SetActive(false);
+        }
+
     }
 
     public void RestartLevel()
@@ -207,29 +211,45 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 1;
         timerOffset = Time.time;
 
+        foreach (GameObject petal in UIpetals)
+        {
+            switch (nextScene)
+            {
+                case 1:
+                    petal.SetActive(false);
+                    break;
+                case 2:
+                    if(petalIndex > 2)
+                    {
+                        petal.SetActive(false);
+                    }
+                    break;
+                case 3:
+                    if (petalIndex > 5)
+                    {
+                        petal.SetActive(false);
+                    }
+                    break;
+            }
+        }
+
         switch (nextScene)
         {
             case 1:
                 timerStart = 301 + timerOffset;
-                petalIndex = 0;
-   
                 break;
 
             case 2:
                 timerStart = 361 + timerOffset;
-                petalIndex = 3;
                 break;
 
             case 3:
                 timerStart = 421+ timerOffset;
-                petalIndex = 6;
                 break;
             case 4:
                 timerStart = timerTotal;
-                petalIndex = 9;
                 break;
         }
-
     }
 
     public void PlaySFX()
@@ -283,13 +303,12 @@ public class UIManager : MonoBehaviour
         QualitySettings.SetQualityLevel(qualityIndex);
     }
 
-    void OnCollisionPetal(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Petal" || Input.anyKey)
+        if(collision.gameObject.name == "petal1_1")
         {
-            petals[petalIndex].SetActive(true);
+            Debug.Log("WORK DAMMIT");
+            UIpetals[0].SetActive(true);
         }
-        petalIndex++;
     }
-
 }
