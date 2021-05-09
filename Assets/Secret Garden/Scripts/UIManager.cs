@@ -7,10 +7,18 @@ using UnityEngine.Audio;
 
 public class UIManager : MonoBehaviour
 {
+    public GameObject UIManagerObject;
     public GameObject PauseMenu;
     public GameObject OptionsMenu;
     public GameObject PetalPanel;
     public GameObject TimerPanel;
+    public GameObject LetterPanel;
+    public GameObject ContinueButton;
+    public GameObject[] PetalGroups;
+
+    public Scene[] scenes;
+
+    public GameObject player;
 
     public GameObject[] petals;
     int petalIndex;
@@ -24,7 +32,7 @@ public class UIManager : MonoBehaviour
     public bool muted;
     public AudioClip[] levelMusic;
     public AudioClip[] soundEffects;
-    public Slider masterMixer;
+    int soundEffectsIndex;
 
     public Text timerUI;
     int minutes;
@@ -34,22 +42,26 @@ public class UIManager : MonoBehaviour
     int nextScene;
     string niceTime;
     int timerTotal;
+    float timerOffset;
 
     public Dropdown resolution;
     public Resolution[] resolutions;
+    string[] sceneList = new string[] { "Start Letter", "Level 1 Test", "Level 2 Test", "Level 3 Test", "End Letter" };
+
+    private void Awake()
+    {
+        nextScene = 0;
+    }
 
     private void Start()
     {
-        Screen.fullScreen = true;
-
         PauseMenu.SetActive(false);
         OptionsMenu.SetActive(false);
+
 
         musicSource = GetComponent<AudioSource>();
         musicSource.clip = levelMusic[0];
         musicSource.Play();
-
-        nextScene = 0;
 
         muted = false;
 
@@ -59,6 +71,7 @@ public class UIManager : MonoBehaviour
             TimerPanel.SetActive(false);
         }
 
+        Screen.fullScreen = true;
         resolutions = Screen.resolutions;
         resolution.ClearOptions();
         List<string> options = new List<string>();
@@ -106,28 +119,33 @@ public class UIManager : MonoBehaviour
 
     public void PauseButton()
     {
+        soundEffectsIndex = 0;
         Time.timeScale = 0;
         PauseMenu.SetActive(true);
     }
 
     public void ResumeButton()
     {
+        soundEffectsIndex = 0;
         Time.timeScale = 1;
         PauseMenu.SetActive(false);
     }
 
     public void OptionsButton()
     {
+        soundEffectsIndex = 0;
         OptionsMenu.SetActive(true);
     }
 
     public void CloseOptions()
     {
+        soundEffectsIndex = 0;
         OptionsMenu.SetActive(false);
     }
 
     public void ExitButton()
     {
+        soundEffectsIndex = 0;
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #else
@@ -137,16 +155,15 @@ public class UIManager : MonoBehaviour
 
     public void Continue()
     {
-
+        soundEffectsIndex = 0;
         TimerTotal();
         nextScene++;
-        SceneManager.LoadScene(nextScene);
+        SceneManager.LoadSceneAsync(nextScene, LoadSceneMode.Single);
 
-        if (nextScene >= 1)
-        {
-            PetalPanel.SetActive(true);
-            TimerPanel.SetActive(true);
-        }
+        DontDestroyOnLoad(UIManagerObject);
+
+        PetalPanel.SetActive(true);
+        TimerPanel.SetActive(true);
 
         switch (nextScene)
         {
@@ -154,18 +171,23 @@ public class UIManager : MonoBehaviour
                 musicSource.clip = levelMusic[1];
                 timerStart = 300;
                 petalIndex = 0;
+                LetterPanel.SetActive(false);
+                ContinueButton.SetActive(false);
+                PetalGroups[0].SetActive(true);
                 break;
 
             case 2:
                 musicSource.clip = levelMusic[2];
                 timerStart = 360;
                 petalIndex = 3;
+                PetalGroups[1].SetActive(true);
                 break;
 
             case 3:
                 musicSource.clip = levelMusic[3];
                 timerStart = 420;
                 petalIndex = 6;
+                PetalGroups[2].SetActive(true);
                 break;
             case 4:
                 musicSource.clip = levelMusic[0];
@@ -180,23 +202,53 @@ public class UIManager : MonoBehaviour
 
     public void RestartLevel()
     {
+        soundEffectsIndex = 0;
         SceneManager.LoadScene(nextScene);
         Time.timeScale = 1;
+        timerOffset = Time.time;
+
+        switch (nextScene)
+        {
+            case 1:
+                timerStart = 301 + timerOffset;
+                petalIndex = 0;
+   
+                break;
+
+            case 2:
+                timerStart = 361 + timerOffset;
+                petalIndex = 3;
+                break;
+
+            case 3:
+                timerStart = 421+ timerOffset;
+                petalIndex = 6;
+                break;
+            case 4:
+                timerStart = timerTotal;
+                petalIndex = 9;
+                break;
+        }
+
     }
 
+    public void PlaySFX()
+    {
+        sfxsource.clip = soundEffects[soundEffectsIndex];
+        sfxsource.Play();
+    }
 
     public void MusicVolume(float musicVolume)
     {
         Audio[0].audioMixer.SetFloat("musicVolume", musicVolume);
         MusicVolumePercent.text = (Mathf.Round((musicVolume + 80) * 100f / 100)).ToString() + " %";
     }
+
     public void SoundEffectsVolume(float soundEffectsVolume)
     {
         Audio[1].audioMixer.SetFloat("soundEffectsVolume", soundEffectsVolume);
         SFXVolumePercent.text = (Mathf.Round((soundEffectsVolume + 80) * 100f / 100)).ToString() + " %";
     }
-
-
 
     public void Mute(bool isMuted)
     {
@@ -233,14 +285,11 @@ public class UIManager : MonoBehaviour
 
     void OnCollisionPetal(Collision2D collision)
     {
-        
-
-        if(collision.gameObject.tag == "Petal")
+        if(collision.gameObject.tag == "Petal" || Input.anyKey)
         {
             petals[petalIndex].SetActive(true);
         }
         petalIndex++;
-        
     }
 
 }
