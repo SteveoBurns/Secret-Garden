@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 2242962421649594128}
   - component: {fileID: 2242962421649594126}
   - component: {fileID: -2555508800410736135}
+  - component: {fileID: 3263572498137345677}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -222,6 +223,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   rb: {fileID: 2242962421649594131}
+  playerAnimator: {fileID: 3263572498137345677}
 --- !u!114 &2242962421649594126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247,6 +249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 458bc60fee4c39b40ba957b9c96dedea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 3263572498137345677}
   petal1_1: {fileID: 0}
   petal1_2: {fileID: 0}
   petal1_3: {fileID: 0}
@@ -256,6 +259,29 @@ MonoBehaviour:
   petal3_1: {fileID: 0}
   petal3_2: {fileID: 0}
   petal3_3: {fileID: 0}
+  finalFlower: {fileID: 0}
+  letter: {fileID: 0}
   handle: {fileID: 0}
+  handleShow: 0
   key: {fileID: 0}
   gameKey: {fileID: 0}
+  hasKey: 0
+--- !u!95 &3263572498137345677
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2242962421649594132}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 62686e216f94f8d49afa900873f32869, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

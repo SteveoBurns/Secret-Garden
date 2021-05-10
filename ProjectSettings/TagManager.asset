@@ -19,6 +19,12 @@ TagManager:
   - key
   - handle_door
   - End Door
+  - Final Flower
+  - End Door1
+  - handle_door_right
+  - Letter
+  - EndLevel1
+  - EndLevel2
   layers:
   - Default
   - TransparentFX

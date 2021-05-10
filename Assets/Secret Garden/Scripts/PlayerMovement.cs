@@ -10,6 +10,8 @@ public class PlayerMovement : MonoBehaviour
 
     Vector2 movement;
 
+    [SerializeField] private Animator playerAnimator;
+
     // Update is called once per frame
     void Update()
     {
@@ -21,5 +23,8 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        playerAnimator.SetFloat("xInput", movement.x);
+        playerAnimator.SetFloat("yInput", movement.y);
+        
     }
 }

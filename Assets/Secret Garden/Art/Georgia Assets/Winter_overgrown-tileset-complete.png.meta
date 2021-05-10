@@ -1,7 +1,67 @@
 fileFormatVersion: 2
 guid: 6993cb202871fb2469eb59ced139daa6
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 5973562124463181941
+    second: Winter_overgrown-tileset-complete_0
+  - first:
+      213: -9080885031785024475
+    second: Winter_overgrown-tileset-complete_1
+  - first:
+      213: -4829052483414019611
+    second: Winter_overgrown-tileset-complete_2
+  - first:
+      213: 2092043588135464158
+    second: Winter_overgrown-tileset-complete_3
+  - first:
+      213: -6726254485711983098
+    second: Winter_overgrown-tileset-complete_4
+  - first:
+      213: 2953873643661178394
+    second: Winter_overgrown-tileset-complete_5
+  - first:
+      213: 2245216437880156462
+    second: Winter_overgrown-tileset-complete_6
+  - first:
+      213: 3893701573399002662
+    second: Winter_overgrown-tileset-complete_7
+  - first:
+      213: 2873574793511561876
+    second: Winter_overgrown-tileset-complete_8
+  - first:
+      213: -8690757450978789249
+    second: Winter_overgrown-tileset-complete_9
+  - first:
+      213: -6018624066621264072
+    second: Winter_overgrown-tileset-complete_10
+  - first:
+      213: -5910366511227056568
+    second: Winter_overgrown-tileset-complete_11
+  - first:
+      213: 8133159682531971277
+    second: Winter_overgrown-tileset-complete_12
+  - first:
+      213: -3015509663343001914
+    second: Winter_overgrown-tileset-complete_13
+  - first:
+      213: -3424286657089183082
+    second: Winter_overgrown-tileset-complete_14
+  - first:
+      213: -6768297756831546600
+    second: Winter_overgrown-tileset-complete_15
+  - first:
+      213: -6821447884955007532
+    second: Winter_overgrown-tileset-complete_16
+  - first:
+      213: -6258395146641782303
+    second: Winter_overgrown-tileset-complete_17
+  - first:
+      213: 7800774938890634861
+    second: Winter_overgrown-tileset-complete_18
+  - first:
+      213: 1627027011662916610
+    second: Winter_overgrown-tileset-complete_19
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -41,12 +101,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 128
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,9 +135,509 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Winter_overgrown-tileset-complete_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 388
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -46, y: -64}
+        - {x: -64, y: -64}
+        - {x: -64, y: 64}
+        - {x: 64, y: 64}
+        - {x: 64, y: 45}
+        - {x: -46, y: 43}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5701b585a1b56e250800000000000000
+      internalID: 5973562124463181941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Winter_overgrown-tileset-complete_1
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 388
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -64, y: -64}
+        - {x: -64, y: 64}
+        - {x: -48, y: 64}
+        - {x: -46, y: -46}
+        - {x: 64, y: -45}
+        - {x: 64, y: -64}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 524ba4a1d273af180800000000000000
+      internalID: -9080885031785024475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Winter_overgrown-tileset-complete_2
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 388
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 48, y: -64}
+        - {x: 48, y: 49}
+        - {x: -64, y: 49}
+        - {x: -64, y: 64}
+        - {x: 64, y: 64}
+        - {x: 64, y: -64}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e1b36c0a52cbfcb0800000000000000
+      internalID: -4829052483414019611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Winter_overgrown-tileset-complete_3
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 388
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -64, y: -64}
+        - {x: -64, y: -50}
+        - {x: 48, y: -49}
+        - {x: 48, y: 64}
+        - {x: 64, y: 64}
+        - {x: 64, y: -64}
+      tessellationDetail: 0
+      bones: []
+      spriteID: edca27d2f8e680d10800000000000000
+      internalID: 2092043588135464158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Winter_overgrown-tileset-complete_4
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 388
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -64, y: -64}
+        - {x: -64, y: 64}
+        - {x: -47, y: 64}
+        - {x: -46, y: -64}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60e6246be2b87a2a0800000000000000
+      internalID: -6726254485711983098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Winter_overgrown-tileset-complete_5
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 259
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 50, y: -64}
+        - {x: 51, y: 64}
+        - {x: 64, y: 64}
+        - {x: 64, y: -64}
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1630d9bd644ef820800000000000000
+      internalID: 2953873643661178394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Winter_overgrown-tileset-complete_6
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 259
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e21f6bf547c982f10800000000000000
+      internalID: 2245216437880156462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Winter_overgrown-tileset-complete_7
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 259
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -64, y: -64}
+        - {x: -64, y: -49}
+        - {x: 64, y: -50}
+        - {x: 64, y: -64}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62eb3d783f4390630800000000000000
+      internalID: 3893701573399002662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Winter_overgrown-tileset-complete_8
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 259
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -64, y: 47}
+        - {x: -64, y: 64}
+        - {x: 64, y: 64}
+        - {x: 64, y: 48}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49ae5c2cc0df0e720800000000000000
+      internalID: 2873574793511561876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Winter_overgrown-tileset-complete_9
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 259
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f787459d42a346780800000000000000
+      internalID: -8690757450978789249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Winter_overgrown-tileset-complete_10
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 130
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83f2c68ac4d897ca0800000000000000
+      internalID: -6018624066621264072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Winter_overgrown-tileset-complete_11
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 130
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84e42f5f8f82afda0800000000000000
+      internalID: -5910366511227056568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Winter_overgrown-tileset-complete_12
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 130
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 44, y: -64}
+        - {x: 46, y: -47}
+        - {x: 64, y: -43}
+        - {x: 64, y: -64}
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc0d8d2d3a9ced070800000000000000
+      internalID: 8133159682531971277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Winter_overgrown-tileset-complete_13
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 130
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -64, y: -64}
+        - {x: -64, y: -46}
+        - {x: -46, y: -48}
+        - {x: -46, y: -64}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cebea320f1c626d0800000000000000
+      internalID: -3015509663343001914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Winter_overgrown-tileset-complete_14
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 130
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 48, y: 47}
+        - {x: 49, y: 64}
+        - {x: 64, y: 64}
+        - {x: 64, y: 46}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 692e6139d6d7a70d0800000000000000
+      internalID: -3424286657089183082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Winter_overgrown-tileset-complete_15
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -64, y: 47}
+        - {x: -64, y: 64}
+        - {x: -47, y: 64}
+        - {x: -49, y: 49}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8138bf5dc0d2212a0800000000000000
+      internalID: -6768297756831546600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Winter_overgrown-tileset-complete_16
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 1
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d5ca6b4a495551a0800000000000000
+      internalID: -6821447884955007532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Winter_overgrown-tileset-complete_17
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 1
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e94364c5c6b529a0800000000000000
+      internalID: -6258395146641782303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Winter_overgrown-tileset-complete_18
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 1
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6688550a7be14c60800000000000000
+      internalID: 7800774938890634861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Winter_overgrown-tileset-complete_19
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 1
+        width: 129
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20c222e527c549610800000000000000
+      internalID: 1627027011662916610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
 {
     private HandleGate gate;
     private EndLevelDoor endDoor;
+    [SerializeField]private Animator animator;
 
     [Header("Petal UI Elements")]    
     [SerializeField] private Image petal1_1;
@@ -26,10 +27,11 @@ public class PlayerController : MonoBehaviour
     private int petalsCollected = 0;
 
     [SerializeField] private GameObject finalFlower;
+    [SerializeField] private GameObject letter;
 
     [Header("Handle UI Elements")]
     [SerializeField] private Image handle;
-    [SerializeField] private bool handleShow = false;
+    [SerializeField] private bool hasHandle = false;
 
     [Header("Key UI Elements")]
     [SerializeField] private Image key;
@@ -41,7 +43,7 @@ public class PlayerController : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //have to enable all images when I have the HUD scene.
-        print("collision");
+        
         #region Petal PickUps
         if (collision.gameObject.tag == "petal1_1")
         {
@@ -99,27 +101,37 @@ public class PlayerController : MonoBehaviour
         }
         #endregion
         #region Handle PickUp
-        if (collision.gameObject.tag=="handle")
+        if (collision.gameObject.tag == "handle")
         {
-            handleShow = true;
+            hasHandle = true;
             //handle.enabled = true;
             Destroy(collision.gameObject);
         }
         #endregion
         #region Handle Doors
-        if (collision.gameObject.tag == "handle_door" && handleShow == true)
+        if (collision.gameObject.tag == "handle_door" && hasHandle == true)
         {
-            print("door collision");
-            handleShow = false;
+            
+            hasHandle = false;
             //handle.enabled = false;
             gate = collision.gameObject.GetComponent<HandleGate>();
             gate.OpenGate();
-           
+            animator.SetTrigger("OpenHandleUp");
             
+        }
+        if (collision.gameObject.tag == "handle_door_right" && hasHandle == true)
+        {
+
+            hasHandle = false;
+            //handle.enabled = false;
+            gate = collision.gameObject.GetComponent<HandleGate>();
+            gate.OpenGate();
+            animator.SetTrigger("OpenHandleRight");
+
         }
         #endregion
         #region Key Pickup
-        if (petalsCollected == 3) 
+        if (petalsCollected == 3 && hasKey == false) 
         {
             gameKey.SetActive(true);
         }
@@ -128,7 +140,11 @@ public class PlayerController : MonoBehaviour
         {
             hasKey = true;
             gameKey.SetActive(false);
-            finalFlower.SetActive(true);
+            if (letter == null)
+                return;
+            else
+                letter.SetActive(true);
+            
             //key.enabled = true;
             
         }
@@ -141,7 +157,25 @@ public class PlayerController : MonoBehaviour
 
                 endDoor = collision.gameObject.GetComponent<EndLevelDoor>();
                 endDoor.OpenDoor();
+                animator.SetTrigger("OpenGate");
                 
+                
+                // play door sound
+                // fade to black
+
+                // Load next scene
+            }
+        }
+        if (collision.gameObject.tag == "End Door1")
+        {
+            if (hasKey == true)
+            {
+
+                endDoor = collision.gameObject.GetComponent<EndLevelDoor>();
+                endDoor.OpenDoor();
+                animator.SetTrigger("OpenGateDown");
+
+
                 // play door sound
                 // fade to black
 
@@ -150,14 +184,33 @@ public class PlayerController : MonoBehaviour
         }
 
         #endregion
+        #region Letter Pickup
+        if (collision.gameObject.tag == "Letter")
+        {
+            letter.SetActive(false);
+            finalFlower.SetActive(true);
+        }
+        #endregion
         #region Final Flower
         if (collision.gameObject.tag == "Final Flower") 
         {
             SceneManager.LoadScene("End Letter");
         }
         #endregion
+        #region Level Loading
+        if (collision.gameObject.tag == "EndLevel1")
+            SceneManager.LoadScene("Level 2 Test");
+        if (collision.gameObject.tag == "EndLevel2")
+            SceneManager.LoadScene("Level 3 Test");
+        #endregion
 
 
+
+    }
+
+    private void LoadNextLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
 
@@ -165,6 +218,17 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         gameKey.SetActive(false);
+
+        if (letter == null)
+            return;
+        else
+            letter.SetActive(false);
+        
+        if (finalFlower == null)
+            return;
+        else
+            finalFlower.SetActive(false);
+        
     }
 
     // Update is called once per frame
