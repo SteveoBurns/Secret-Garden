@@ -10,8 +10,11 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class PlayerController : MonoBehaviour
 {
+    //Classes
     private HandleGate gate;
     private EndLevelDoor endDoor;
+
+    [Header("Player Animator")]
     [SerializeField]private Animator animator;
 
     [Header("Petal UI Elements")]    
@@ -26,9 +29,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Image petal3_3;
     private int petalsCollected = 0;
 
-    [SerializeField] private GameObject finalFlower;
-    [SerializeField] private GameObject letter;
-
     [Header("Handle UI Elements")]
     [SerializeField] private Image handle;
     [SerializeField] private bool hasHandle = false;
@@ -38,8 +38,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject gameKey;
     [SerializeField] private bool hasKey = false;
 
-    
-    
+    [Header("Level 3 objects")]
+    [SerializeField] private GameObject finalFlower;
+    [SerializeField] private GameObject letter;
+
+
+    /// <summary>
+    /// This handles all the collider based pickups and triggers for the player character.
+    /// </summary>
+    /// <param name="collision">The object the character interacts with</param>
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //have to enable all images when I have the HUD scene.
@@ -109,6 +116,7 @@ public class PlayerController : MonoBehaviour
         }
         #endregion
         #region Handle Doors
+        // This is for the animation for the door facing down
         if (collision.gameObject.tag == "handle_door" && hasHandle == true)
         {
             
@@ -119,6 +127,7 @@ public class PlayerController : MonoBehaviour
             animator.SetTrigger("OpenHandleUp");
             
         }
+        // This is because the animation for the door needs to be the correct one
         if (collision.gameObject.tag == "handle_door_right" && hasHandle == true)
         {
 
@@ -208,17 +217,14 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    private void LoadNextLevel()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-    }
-
+    
 
     // Start is called before the first frame update
     void Start()
     {
         gameKey.SetActive(false);
 
+        // Null checking for levels 1 & 2
         if (letter == null)
             return;
         else
@@ -230,17 +236,5 @@ public class PlayerController : MonoBehaviour
             finalFlower.SetActive(false);
         
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-
-
-
-
-
 
 }

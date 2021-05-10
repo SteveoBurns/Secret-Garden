@@ -16,6 +16,7 @@ public class PullBox : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Casting the rays from the player in 4 directions.
         #region Cast Rays
         Physics2D.queriesStartInColliders = false;
         RaycastHit2D hitRight = Physics2D.Raycast(transform.position, Vector2.right * transform.localScale.x, rayDistance);
@@ -24,6 +25,7 @@ public class PullBox : MonoBehaviour
         RaycastHit2D hitDown = Physics2D.Raycast(transform.position, Vector2.down * transform.localScale.x, rayDistance);
         #endregion
 
+        //If a ray is hitting an object run the MoveBox function.
         #region Check Ray hits
         if (hitRight.collider != null)
         {
@@ -54,14 +56,15 @@ public class PullBox : MonoBehaviour
     {
         if (ray.collider != null && ray.collider.tag == "Box" && Input.GetButtonDown("Space"))
         {
-
             box = ray.collider.gameObject;
+            // Enable the fixed joint between the player and the object when holding space bar.
             box.GetComponent<FixedJoint2D>().enabled = true;
             box.GetComponent<FixedJoint2D>().connectedBody = this.GetComponent<Rigidbody2D>();
             return true;
         }
         else if (Input.GetButtonUp("Space"))
         {
+            // Disables the fixed joint when releasing space bar.
             box.GetComponent<FixedJoint2D>().enabled = false;
             return true;
         }

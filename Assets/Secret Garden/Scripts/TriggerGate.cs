@@ -14,11 +14,11 @@ public class TriggerGate : MonoBehaviour
     // Start is called just before any of the Update methods is called the first time
     private void Start()
     {
+        //Setting all the gates in the closed position at the start.
         #region Set Gates
         closegate.SetActive(true);
         openGate.SetActive(false);
-        isOpen = false;
-        Debug.Log("set Gates");
+        isOpen = false;        
         #endregion
 
     }
@@ -33,7 +33,7 @@ public class TriggerGate : MonoBehaviour
     /// <param name="_collider">Player or Box touching trigger</param>
     private void OnTriggerStay2D(Collider2D _collider)
     {
-        Debug.Log("has touched");
+       
         if(isOpen == false)
         {
 
@@ -41,8 +41,7 @@ public class TriggerGate : MonoBehaviour
             {
                 isOpen = true;
                 closegate.SetActive(false);
-                openGate.SetActive(true);
-                Debug.Log("its open"); 
+                openGate.SetActive(true);               
             }
         }
         
@@ -64,11 +63,4 @@ public class TriggerGate : MonoBehaviour
     }
 
 
-
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
