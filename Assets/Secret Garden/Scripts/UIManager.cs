@@ -18,6 +18,13 @@ public class UIManager : MonoBehaviour
     public GameObject[] UI_petals;
     public static GameObject[] InGamePetals;
     public static int petalIndex;
+    public int retryCounter;
+    public GameObject RetryPanel;
+    public Text onScreenRetry;
+    public Text retryText;
+    public Image panCol;
+    private Color32 lerpedColor;
+    
 
     public Scene[] scenes;
 
@@ -56,12 +63,13 @@ public class UIManager : MonoBehaviour
         PauseMenu.SetActive(false);
         OptionsMenu.SetActive(false);
 
-
         musicSource = GetComponent<AudioSource>();
         musicSource.clip = levelMusic[0];
         musicSource.Play();
 
         muted = false;
+
+        panCol = RetryPanel.GetComponent<Image>();
 
         if (nextScene == 0)
         {
@@ -113,6 +121,11 @@ public class UIManager : MonoBehaviour
         string niceTime = string.Format("{0:0}:{1:00}", minutes, seconds);
         timerUI.text = "Time Remaining: " + niceTime;
 
+        if (timer <= 0 && nextScene > 0)
+        {
+            RestartLevel();
+        }
+
         InGamePetals = UI_petals;
     }
 
@@ -163,6 +176,7 @@ public class UIManager : MonoBehaviour
 
         PetalPanel.SetActive(true);
         TimerPanel.SetActive(true);
+        RetryPanel.SetActive(true);
 
         switch (nextScene)
         {
@@ -202,15 +216,25 @@ public class UIManager : MonoBehaviour
             petal.SetActive(false);
         }
 
+
     }
 
     public void RestartLevel()
     {
+
         PauseMenu.SetActive(false);
         soundEffectsIndex = 0;
         SceneManager.LoadScene(nextScene);
+
         Time.timeScale = 1;
         timerOffset = Time.time;
+
+        if(nextScene >= 1 && nextScene <= 3)
+        {
+            retryCounter++;
+        }
+
+        onScreenRetry.text = "Retries: " + retryCounter.ToString();
 
         foreach (GameObject petal in UI_petals)
         {
@@ -252,6 +276,7 @@ public class UIManager : MonoBehaviour
             case 3:
                 timerStart = 421+ timerOffset;
                 break;
+
             case 4:
                 timerStart = timerTotal;
                 break;
