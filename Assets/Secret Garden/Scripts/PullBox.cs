@@ -52,9 +52,10 @@ public class PullBox : MonoBehaviour
     }
 
     /// <summary>
-    /// Handles the movement of push/pull boxes
+    /// This function handles the Push and Pull blocks and plays the correct animation depending on where those blocks are touching the character.
     /// </summary>
-    /// <param name="ray">The raycast that is touching the box</param>
+    /// <param name="ray">The ray that is hitting the object</param>
+    /// <param name="rayName">The name of the ray</param>
     private void MoveBox(RaycastHit2D ray, string rayName)
     {
         switch (rayName)
