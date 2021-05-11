@@ -1,0 +1,34 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PlayerMovement : MonoBehaviour
+{
+    public float moveSpeed = 5f;
+
+    public Rigidbody2D rb;
+
+    Vector2 movement;
+
+    [SerializeField] private Animator playerAnimator;
+
+    // Update is called once per frame
+    void Update()
+    {
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
+    }
+
+    // This function is called every fixed framerate frame, if the MonoBehaviour is enabled
+    private void FixedUpdate()
+    {
+        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        playerAnimator.SetFloat("xInput", movement.x);
+        playerAnimator.SetFloat("yInput", movement.y);
+        if (movement.x != 0 || movement.y != 0)
+            playerAnimator.SetBool("isMoving", true);
+        else
+            playerAnimator.SetBool("isMoving", false);
+
+    }
+}
