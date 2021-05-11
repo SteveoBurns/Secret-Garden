@@ -29,6 +29,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Image key;
     [SerializeField] private GameObject gameKey;
     [SerializeField] private bool hasKey = false;
+    [SerializeField] GameObject letter;
+
+    [SerializeField] Animator animator;
 
     void Start()
     {
@@ -86,6 +89,42 @@ public class PlayerController : MonoBehaviour
             petalsCollected++;  
         }
 
+        #region End Level Doors
+
+        if (collision.gameObject.tag == "End Door")
+        {
+            if (hasKey == true)
+            {
+
+                endDoor = collision.gameObject.GetComponent<EndLevelDoor>();
+                endDoor.OpenDoor();
+                //animator.SetTrigger("OpenGate");
+
+
+                // play door sound
+                // fade to black
+
+                // Load next scene
+            }
+        }
+        if (collision.gameObject.tag == "End Door1")
+        {
+            if (hasKey == true)
+            {
+
+                endDoor = collision.gameObject.GetComponent<EndLevelDoor>();
+                endDoor.OpenDoor();
+                animator.SetTrigger("OpenGateDown");
+
+
+                //play door sound
+                // fade to black
+
+                // Load next scene
+            }
+        }
+        #endregion
+
         #region Handle PickUp
         if (collision.gameObject.tag=="handle")
         {
@@ -123,30 +162,33 @@ public class PlayerController : MonoBehaviour
         }
         #endregion
 
-        #region End Level Doors
-        if (collision.gameObject.tag == "End Door")
+#region Final Flower
+       if (collision.gameObject.tag == "Final Flower") 
+       {
+           SceneManager.LoadScene("End Letter");
+       }
+#endregion
+
+        #region Letter Pickup
+        if (collision.gameObject.tag == "Letter")
         {
-            if (hasKey == true)
-            {
-
-                endDoor = collision.gameObject.GetComponent<EndLevelDoor>();
-                endDoor.OpenDoor();
-                
-                // play door sound
-                // fade to black
-
-                // Load next scene
-            }
-        }
-
-        #endregion
-
-        #region Final Flower
-        if (collision.gameObject.tag == "Final Flower") 
-        {
-            SceneManager.LoadScene("End Letter");
+            letter.SetActive(false);
+            finalFlower.SetActive(true);
         }
         #endregion
 
+#region Level Loading
+       if (collision.gameObject.tag == "EndLevel1")
+        {
+            UIManager.loadScene++;
+            SceneManager.LoadScene(UIManager.loadScene);
+        }
+
+        if (collision.gameObject.tag == "EndLevel2")
+        {
+            UIManager.loadScene++;
+            SceneManager.LoadScene(UIManager.loadScene);
+        }
+#endregion
     }
 }

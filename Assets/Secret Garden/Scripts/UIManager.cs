@@ -12,7 +12,6 @@ public class UIManager : MonoBehaviour
     public GameObject OptionsMenu;
     public GameObject PetalPanel;
     public GameObject TimerPanel;
-    public GameObject LetterPanel;
     public GameObject ContinueButton;
     public GameObject[] PetalGroups;
     public GameObject[] UI_petals;
@@ -21,10 +20,8 @@ public class UIManager : MonoBehaviour
     public int retryCounter;
     public GameObject RetryPanel;
     public Text onScreenRetry;
-    public Text retryText;
-    public Image panCol;
-    private Color32 lerpedColor;
-    
+    public static int loadScene;
+    public GameObject LetterPanel;
 
     public Scene[] scenes;
 
@@ -42,11 +39,11 @@ public class UIManager : MonoBehaviour
     public Text timerUI;
     int minutes;
     int seconds;
-    float timerStart;
+    public float timerStart;
     int timer;
-    int nextScene;
+    [SerializeField] int nextScene;
     string niceTime;
-    int timerTotal;
+    public int timerTotal;
     float timerOffset;
 
     public Dropdown resolution;
@@ -60,6 +57,7 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
+        timer = 1;
         PauseMenu.SetActive(false);
         OptionsMenu.SetActive(false);
 
@@ -68,8 +66,6 @@ public class UIManager : MonoBehaviour
         musicSource.Play();
 
         muted = false;
-
-        panCol = RetryPanel.GetComponent<Image>();
 
         if (nextScene == 0)
         {
@@ -80,6 +76,7 @@ public class UIManager : MonoBehaviour
         Screen.fullScreen = true;
         resolutions = Screen.resolutions;
         resolution.ClearOptions();
+
         List<string> options = new List<string>();
         int currentResolutionIndex = 0;
 
@@ -121,14 +118,15 @@ public class UIManager : MonoBehaviour
         string niceTime = string.Format("{0:0}:{1:00}", minutes, seconds);
         timerUI.text = "Time Remaining: " + niceTime;
 
-        if (timer <= 0 && nextScene > 0)
+        if (timer <= 0 && nextScene >= 1)
         {
             RestartLevel();
         }
 
+        loadScene = nextScene;
         InGamePetals = UI_petals;
     }
-
+   
     public void PauseButton()
     {
         soundEffectsIndex = 0;
@@ -167,16 +165,8 @@ public class UIManager : MonoBehaviour
 
     public void Continue()
     {
-        soundEffectsIndex = 0;
-        TimerTotal();
+        LetterPanel.SetActive(false);
         nextScene++;
-        SceneManager.LoadSceneAsync(nextScene, LoadSceneMode.Single);
-
-        DontDestroyOnLoad(UIManagerObject);
-
-        PetalPanel.SetActive(true);
-        TimerPanel.SetActive(true);
-        RetryPanel.SetActive(true);
 
         switch (nextScene)
         {
@@ -184,8 +174,6 @@ public class UIManager : MonoBehaviour
                 musicSource.clip = levelMusic[1];
                 timerStart = 300;
                 petalIndex = 0;
-                LetterPanel.SetActive(false);
-                ContinueButton.SetActive(false);
                 PetalGroups[0].SetActive(true);
                 break;
 
@@ -202,6 +190,7 @@ public class UIManager : MonoBehaviour
                 petalIndex = 6;
                 PetalGroups[2].SetActive(true);
                 break;
+
             case 4:
                 musicSource.clip = levelMusic[0];
                 timerStart = timerTotal;
@@ -211,17 +200,28 @@ public class UIManager : MonoBehaviour
 
         musicSource.Play();
 
+        soundEffectsIndex = 0;
+        TimerTotal();
+
+        SceneManager.LoadSceneAsync(nextScene, LoadSceneMode.Single);
+
+        DontDestroyOnLoad(UIManagerObject);
+
+
+        PetalPanel.SetActive(true);
+        TimerPanel.SetActive(true);
+        RetryPanel.SetActive(true);
+
         foreach(GameObject petal in UI_petals)
         {
             petal.SetActive(false);
         }
 
-
+        ContinueButton.SetActive(false);
     }
 
     public void RestartLevel()
     {
-
         PauseMenu.SetActive(false);
         soundEffectsIndex = 0;
         SceneManager.LoadScene(nextScene);
