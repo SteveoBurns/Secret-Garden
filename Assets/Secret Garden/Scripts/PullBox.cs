@@ -7,6 +7,9 @@ public class PullBox : MonoBehaviour
 {
     // The distance from the player the raycast travels
     [SerializeField] private float rayDistance = .55f;
+
+    [Header("Player Animator")]
+    [SerializeField] private Animator animator;
     
     // the box the raycast is touching
     private GameObject box;
@@ -28,20 +31,20 @@ public class PullBox : MonoBehaviour
         //If a ray is hitting an object run the MoveBox function.
         #region Check Ray hits
         if (hitRight.collider != null)
-        {
-            MoveBox(hitRight);
+        {            
+            MoveBox(hitRight, "hitRight");
         }
         else if (hitLeft.collider != null)
         {
-            MoveBox(hitLeft);
+            MoveBox(hitLeft, "hitLeft");
         }
         else if (hitUp.collider != null)
         {
-            MoveBox(hitUp);
+            MoveBox(hitUp, "hitUp");
         }
         else if (hitDown.collider != null)
         {
-            MoveBox(hitDown);
+            MoveBox(hitDown, "hitDown");
         }
         #endregion
 
@@ -52,24 +55,88 @@ public class PullBox : MonoBehaviour
     /// Handles the movement of push/pull boxes
     /// </summary>
     /// <param name="ray">The raycast that is touching the box</param>
-    private bool MoveBox(RaycastHit2D ray)
+    private void MoveBox(RaycastHit2D ray, string rayName)
     {
-        if (ray.collider != null && ray.collider.tag == "Box" && Input.GetButtonDown("Space"))
+        switch (rayName)
         {
-            box = ray.collider.gameObject;
-            // Enable the fixed joint between the player and the object when holding space bar.
-            box.GetComponent<FixedJoint2D>().enabled = true;
-            box.GetComponent<FixedJoint2D>().connectedBody = this.GetComponent<Rigidbody2D>();
-            return true;
-        }
-        else if (Input.GetButtonUp("Space"))
-        {
-            // Disables the fixed joint when releasing space bar.
-            box.GetComponent<FixedJoint2D>().enabled = false;
-            return true;
-        }
+            case "hitRight":
+                if (ray.collider != null && ray.collider.tag == "Box" && Input.GetButtonDown("Space"))
+                {
+                    animator.SetFloat("xInputPush", 1);
+                    animator.SetBool("isPushing", true);
+                    box = ray.collider.gameObject;
+                    // Enable the fixed joint between the player and the object when holding space bar.
+                    box.GetComponent<FixedJoint2D>().enabled = true;
+                    box.GetComponent<FixedJoint2D>().connectedBody = this.GetComponent<Rigidbody2D>();
 
-        return false;
+                }
+                else if (Input.GetButtonUp("Space"))
+                {
+                    // Disables the fixed joint when releasing space bar.
+                    box.GetComponent<FixedJoint2D>().enabled = false;
+                    animator.SetBool("isPushing", false);
+                    animator.SetFloat("xInputPush", 0);
+                }
+                break;
+            case "hitLeft":
+                if (ray.collider != null && ray.collider.tag == "Box" && Input.GetButtonDown("Space"))
+                {
+                    animator.SetFloat("xInputPush", -1);
+                    animator.SetBool("isPushing", true);
+                    box = ray.collider.gameObject;
+                    // Enable the fixed joint between the player and the object when holding space bar.
+                    box.GetComponent<FixedJoint2D>().enabled = true;
+                    box.GetComponent<FixedJoint2D>().connectedBody = this.GetComponent<Rigidbody2D>();
+
+                }
+                else if (Input.GetButtonUp("Space"))
+                {
+                    // Disables the fixed joint when releasing space bar.
+                    box.GetComponent<FixedJoint2D>().enabled = false;
+                    animator.SetBool("isPushing", false);
+                    animator.SetFloat("xInputPush", 0);
+                }
+                break;
+            case "hitUp":
+                if (ray.collider != null && ray.collider.tag == "Box" && Input.GetButtonDown("Space"))
+                {
+                    animator.SetFloat("yInputPush", 1);
+                    animator.SetBool("isPushing", true);
+                    box = ray.collider.gameObject;
+                    // Enable the fixed joint between the player and the object when holding space bar.
+                    box.GetComponent<FixedJoint2D>().enabled = true;
+                    box.GetComponent<FixedJoint2D>().connectedBody = this.GetComponent<Rigidbody2D>();
+
+                }
+                else if (Input.GetButtonUp("Space"))
+                {
+                    // Disables the fixed joint when releasing space bar.
+                    box.GetComponent<FixedJoint2D>().enabled = false;
+                    animator.SetBool("isPushing", false);
+                    animator.SetFloat("yInputPush", 0);
+                }
+                break;
+            case "hitDown":
+                if (ray.collider != null && ray.collider.tag == "Box" && Input.GetButtonDown("Space"))
+                {
+                    animator.SetFloat("yInputPush", -1);
+                    animator.SetBool("isPushing", true);
+                    box = ray.collider.gameObject;
+                    // Enable the fixed joint between the player and the object when holding space bar.
+                    box.GetComponent<FixedJoint2D>().enabled = true;
+                    box.GetComponent<FixedJoint2D>().connectedBody = this.GetComponent<Rigidbody2D>();
+
+                }
+                else if (Input.GetButtonUp("Space"))
+                {
+                    // Disables the fixed joint when releasing space bar.
+                    box.GetComponent<FixedJoint2D>().enabled = false;
+                    animator.SetBool("isPushing", false);
+                    animator.SetFloat("yInputPush", 0);
+                }
+                break;            
+        }
+              
     }
    
 

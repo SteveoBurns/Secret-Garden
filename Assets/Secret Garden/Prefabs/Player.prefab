@@ -237,6 +237,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rayDistance: 0.55
+  animator: {fileID: 3263572498137345677}
 --- !u!114 &-2555508800410736135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -259,13 +260,13 @@ MonoBehaviour:
   petal3_1: {fileID: 0}
   petal3_2: {fileID: 0}
   petal3_3: {fileID: 0}
-  finalFlower: {fileID: 0}
-  letter: {fileID: 0}
   handle: {fileID: 0}
-  handleShow: 0
+  hasHandle: 0
   key: {fileID: 0}
   gameKey: {fileID: 0}
   hasKey: 0
+  finalFlower: {fileID: 0}
+  letter: {fileID: 0}
 --- !u!95 &3263572498137345677
 Animator:
   serializedVersion: 3
