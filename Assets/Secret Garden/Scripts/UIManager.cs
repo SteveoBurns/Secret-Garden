@@ -186,7 +186,7 @@ public class UIManager : MonoBehaviour
         {
             case 1:
                 musicSource.clip = levelMusic[1];
-                timerStart = 180;
+                timerStart = 181 + Time.time;
                 petalIndex = 0;
                 PetalGroups[0].SetActive(true);
                 for (int i = 0; i < UI_petals.Length; i++)
@@ -197,7 +197,7 @@ public class UIManager : MonoBehaviour
 
             case 2:
                 musicSource.clip = levelMusic[2];
-                timerStart = 240;
+                timerStart = 241;
                 petalIndex = 3;
                 PetalGroups[1].SetActive(true);
                 for (int i = 3; i < UI_petals.Length; i++)
@@ -208,7 +208,7 @@ public class UIManager : MonoBehaviour
 
             case 3:
                 musicSource.clip = levelMusic[3];
-                timerStart = 300;
+                timerStart = 301;
                 petalIndex = 6;
                 PetalGroups[2].SetActive(true);
                 for (int i = 6; i < UI_petals.Length; i++)
@@ -320,15 +320,15 @@ public class UIManager : MonoBehaviour
         switch (nextScene)
         {
             case 1:
-                timerStart = 301 + timerOffset;
+                timerStart = 181 + timerOffset;
                 break;
 
             case 2:
-                timerStart = 361 + timerOffset;
+                timerStart = 241 + timerOffset;
                 break;
 
             case 3:
-                timerStart = 421+ timerOffset;
+                timerStart = 301+ timerOffset;
                 break;
 
             case 4:
@@ -434,5 +434,4 @@ public class UIManager : MonoBehaviour
     {
         InGamePetals[petalIndex].SetActive(true);
     }
-
 }
