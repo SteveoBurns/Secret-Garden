@@ -25,6 +25,10 @@ public class PlayerMovement : MonoBehaviour
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
         playerAnimator.SetFloat("xInput", movement.x);
         playerAnimator.SetFloat("yInput", movement.y);
-        
+        if (movement.x != 0 || movement.y != 0)
+            playerAnimator.SetBool("isMoving", true);
+        else
+            playerAnimator.SetBool("isMoving", false);
+
     }
 }
