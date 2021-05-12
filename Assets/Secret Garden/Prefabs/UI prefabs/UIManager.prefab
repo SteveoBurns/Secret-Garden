@@ -49,21 +49,25 @@ MonoBehaviour:
   OptionsMenu: {fileID: 3211924497934825821, guid: 6bc7390f31e1a0c4da5184c16b126527, type: 3}
   PetalPanel: {fileID: 0}
   TimerPanel: {fileID: 0}
-  LetterPanel: {fileID: 0}
   ContinueButton: {fileID: 0}
   PetalGroups: []
+  UI_petals:
+  - {fileID: 1611435864175371552, guid: 9b0e5f6c5737c5e40bf800a27f2c19f1, type: 3}
+  - {fileID: 4050205263011329527, guid: 56d5da2fed821be428bad58558b86bd4, type: 3}
+  - {fileID: 6699814758592116499, guid: 3e83284713eb2fd41a6499794857ae00, type: 3}
+  - {fileID: 6582413977866958536, guid: 677f297035db6b141a1cd474462197f5, type: 3}
+  - {fileID: 136618562603237026, guid: 425a23a294ebe544ebb82d510d54eabf, type: 3}
+  - {fileID: 8119549264285661278, guid: b1f8a5ea9e787184e91bf5638e551ada, type: 3}
+  - {fileID: 6982188357856861395, guid: ff38bfd5e2e2ad0478f7871999135e36, type: 3}
+  - {fileID: 4172607150732370898, guid: 1806006331260b542b44716b7935ce9e, type: 3}
+  - {fileID: 6560052557892239988, guid: 9f1d99a2cd452e5449ee19db80ac6c2f, type: 3}
+  retryCounter: 0
+  RetryPanel: {fileID: 0}
+  onScreenRetry: {fileID: 0}
+  LetterPanel: {fileID: 0}
+  Player: []
+  playerCollider: {fileID: 0}
   scenes: []
-  player: {fileID: 0}
-  petals:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   MusicVolumePercent: {fileID: 0}
   SFXVolumePercent: {fileID: 0}
   Audio: []
@@ -73,6 +77,9 @@ MonoBehaviour:
   levelMusic: []
   soundEffects: []
   timerUI: {fileID: 0}
+  timerStart: 0
+  nextScene: 0
+  timerTotal: 0
   resolution: {fileID: 0}
 --- !u!1 &6955234844314572696
 GameObject:

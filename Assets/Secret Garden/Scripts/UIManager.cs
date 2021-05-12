@@ -22,6 +22,8 @@ public class UIManager : MonoBehaviour
     public Text onScreenRetry;
     public static int loadScene;
     public GameObject LetterPanel;
+    public GameObject[] Player;
+    public Collider playerCollider;
 
     public Scene[] scenes;
 
@@ -50,9 +52,21 @@ public class UIManager : MonoBehaviour
     public Resolution[] resolutions;
     string[] sceneList = new string[] { "Start Letter", "Level 1 Test", "Level 2 Test", "Level 3 Test", "End Letter" };
 
+    public static UIManager instance;
+
+
     private void Awake()
     {
         nextScene = 0;
+
+        if(instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
     }
 
     private void Start()
@@ -175,6 +189,7 @@ public class UIManager : MonoBehaviour
                 timerStart = 300;
                 petalIndex = 0;
                 PetalGroups[0].SetActive(true);
+                
                 break;
 
             case 2:
@@ -182,6 +197,11 @@ public class UIManager : MonoBehaviour
                 timerStart = 360;
                 petalIndex = 3;
                 PetalGroups[1].SetActive(true);
+                for (int i = 0; i < 3; i++)
+                {
+                    UI_petals[i].SetActive(true);
+                }
+
                 break;
 
             case 3:
@@ -189,6 +209,10 @@ public class UIManager : MonoBehaviour
                 timerStart = 420;
                 petalIndex = 6;
                 PetalGroups[2].SetActive(true);
+                for (int i = 0; i < 6; i++)
+                {
+                    UI_petals[i].SetActive(true);
+                }
                 break;
 
             case 4:
@@ -250,14 +274,23 @@ public class UIManager : MonoBehaviour
                     {
                         petal.SetActive(false);
                         PlayerController.petalsCollected = 3;
+                        for (int i = 0; i < 3; i++)
+                        {
+                            UI_petals[i].SetActive(true);
+                        }
                     }
                     break;
 
                 case 3:
+
                     if (petalIndex > 5)
                     {
                         petal.SetActive(false);
                         PlayerController.petalsCollected = 6;
+                        for (int i = 0; i < 6; i++)
+                        {
+                            UI_petals[i].SetActive(true);
+                        }
                     }
                     break;
             }
@@ -338,4 +371,5 @@ public class UIManager : MonoBehaviour
     {
         InGamePetals[petalIndex].SetActive(true);
     }
+
 }

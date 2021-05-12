@@ -41,7 +41,8 @@ public class PlayerController : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "petal")
+
+        if (collision.gameObject.tag == "petal")
         {
             switch (collision.gameObject.name)
             {
@@ -78,7 +79,7 @@ public class PlayerController : MonoBehaviour
                     break;
 
                 case "petal3_3":
-                    playerPetalIndex = 7;
+                    playerPetalIndex = 8;
                     break;
             }
 
