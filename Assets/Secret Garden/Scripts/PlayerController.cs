@@ -103,7 +103,6 @@ public class PlayerController : MonoBehaviour
         }
 
         #region End Level Doors
-
         if (collision.gameObject.tag == "End Door")
         {
             if (hasKey == true)
@@ -111,7 +110,7 @@ public class PlayerController : MonoBehaviour
 
                 endDoor = collision.gameObject.GetComponent<EndLevelDoor>();
                 endDoor.OpenDoor();
-                //animator.SetTrigger("OpenGate");
+                animator.SetTrigger("OpenGate");
 
 
                 // play door sound
@@ -130,7 +129,7 @@ public class PlayerController : MonoBehaviour
                 animator.SetTrigger("OpenGateDown");
 
 
-                //play door sound
+                // play door sound
                 // fade to black
 
                 // Load next scene
