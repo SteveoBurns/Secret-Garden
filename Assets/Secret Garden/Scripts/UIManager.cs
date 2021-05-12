@@ -189,7 +189,10 @@ public class UIManager : MonoBehaviour
                 timerStart = 300;
                 petalIndex = 0;
                 PetalGroups[0].SetActive(true);
-                
+                for (int i = 0; i < UI_petals.Length; i++)
+                {
+                    UI_petals[i].SetActive(false);
+                }
                 break;
 
             case 2:
@@ -197,11 +200,10 @@ public class UIManager : MonoBehaviour
                 timerStart = 360;
                 petalIndex = 3;
                 PetalGroups[1].SetActive(true);
-                for (int i = 0; i < 3; i++)
+                for (int i = 3; i < UI_petals.Length; i++)
                 {
-                    UI_petals[i].SetActive(true);
+                    UI_petals[i].SetActive(false);
                 }
-
                 break;
 
             case 3:
@@ -209,9 +211,9 @@ public class UIManager : MonoBehaviour
                 timerStart = 420;
                 petalIndex = 6;
                 PetalGroups[2].SetActive(true);
-                for (int i = 0; i < 6; i++)
+                for (int i = 6; i < UI_petals.Length; i++)
                 {
-                    UI_petals[i].SetActive(true);
+                    UI_petals[i].SetActive(false);
                 }
                 break;
 
@@ -235,11 +237,6 @@ public class UIManager : MonoBehaviour
         PetalPanel.SetActive(true);
         TimerPanel.SetActive(true);
         RetryPanel.SetActive(true);
-
-        foreach(GameObject petal in UI_petals)
-        {
-            petal.SetActive(false);
-        }
 
         ContinueButton.SetActive(false);
     }
