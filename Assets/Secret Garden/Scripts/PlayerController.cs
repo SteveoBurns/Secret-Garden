@@ -37,6 +37,7 @@ public class PlayerController : MonoBehaviour
     {
         playerPetalIndex = 0;
         gameKey.SetActive(false);
+        
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
