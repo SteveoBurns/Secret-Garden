@@ -173,7 +173,7 @@ public class PlayerController : MonoBehaviour
 
         #region Key Pickup
 
-        if (petalsCollected == 3 && hasKey == false) 
+        if (petalsCollected == UIManager.loadScene * 3 && hasKey == false) 
         {
             gameKey.SetActive(true);
         }
