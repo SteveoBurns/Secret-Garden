@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Handle UI Elements")]
     [SerializeField] private Image handle;
-    [SerializeField] private bool handleShow = false;
+    [SerializeField] private bool hasHandle = false;
 
     [Header("Key UI Elements")]
     [SerializeField] private Image key;
@@ -37,7 +37,18 @@ public class PlayerController : MonoBehaviour
     {
         playerPetalIndex = 0;
         gameKey.SetActive(false);
-        
+
+        // Steveo. Null checking for levels 1 & 2
+        if (letter == null)
+            return;
+        else
+            letter.SetActive(false);
+
+        if (finalFlower == null)
+            return;
+        else
+            finalFlower.SetActive(false);
+
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
@@ -130,28 +141,40 @@ public class PlayerController : MonoBehaviour
         #region Handle PickUp
         if (collision.gameObject.tag=="handle")
         {
-            handleShow = true;
+            hasHandle = true;
             //handle.enabled = true;
             Destroy(collision.gameObject);
         }
         #endregion
 
         #region Handle Doors
-        if (collision.gameObject.tag == "handle_door" && handleShow == true)
+        // Steveo. This is for the animation for the door facing down
+        if (collision.gameObject.tag == "handle_door" && hasHandle == true)
         {
-            print("door collision");
-            handleShow = false;
+
+            hasHandle = false;
             //handle.enabled = false;
             gate = collision.gameObject.GetComponent<HandleGate>();
             gate.OpenGate();
-           
-            
+            animator.SetTrigger("OpenHandleUp");
+
+        }
+        // Steveo. This is because the animation for the door needs to be the correct one
+        if (collision.gameObject.tag == "handle_door_right" && hasHandle == true)
+        {
+
+            hasHandle = false;
+            //handle.enabled = false;
+            gate = collision.gameObject.GetComponent<HandleGate>();
+            gate.OpenGate();
+            animator.SetTrigger("OpenHandleRight");
+
         }
         #endregion
 
         #region Key Pickup
 
-        if (petalsCollected == 3) 
+        if (petalsCollected == 3 && hasKey == false) 
         {
             gameKey.SetActive(true);
         }
@@ -160,7 +183,11 @@ public class PlayerController : MonoBehaviour
         {
             hasKey = true;
             gameKey.SetActive(false);
-            finalFlower.SetActive(true); 
+            if (letter == null)
+                return;
+            else
+                letter.SetActive(true);
+             
         }
         #endregion
 
