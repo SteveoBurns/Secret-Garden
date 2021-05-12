@@ -218,45 +218,68 @@ public class UIManager : MonoBehaviour
                 break;
 
             case 4:
+                //plays the opening music on the final level and displays the timer total on the timer
                 musicSource.clip = levelMusic[0];
                 timerStart = timerTotal;
+                // 9 
                 petalIndex = 9;
                 break;
         }
-
+        
+        //when the new scene is loaded plays the new music
         musicSource.Play();
 
+        //run the click sound effect
         soundEffectsIndex = 0;
+
+        //run the total timer method to add the remaining time to the timer total
         TimerTotal();
 
         SceneManager.LoadSceneAsync(nextScene, LoadSceneMode.Single);
 
+        //doesnt destroy the UI elements needed in the game
         DontDestroyOnLoad(UIManagerObject);
 
-
+       //enables the in game UI elements not present in the opening letter
+       //disables the UI element not present in the game
         PetalPanel.SetActive(true);
         TimerPanel.SetActive(true);
         RetryPanel.SetActive(true);
-
         ContinueButton.SetActive(false);
     }
 
+    /// <summary>
+    /// the script that runs when the level is restarted
+    /// </summary>
     public void RestartLevel()
     {
+        //without this the menu remains open
         PauseMenu.SetActive(false);
+
+        //when clicked it will play the click sound effect
         soundEffectsIndex = 0;
+
+        //reload the scene
         SceneManager.LoadScene(nextScene);
 
+        //unpauses the time of the game
         Time.timeScale = 1;
+
+        //removes excess time from the timer so that it displays the correct time
         timerOffset = Time.time;
 
+        //if you restart the final and start letter it does not add to your retry attempts
         if(nextScene >= 1 && nextScene <= 3)
         {
             retryCounter++;
         }
 
+        //this only changes when the retry button is used
         onScreenRetry.text = "Retries: " + retryCounter.ToString();
 
+        //this section resets the number of petals in the UI,
+        //0 in the first level, 6 in the second. 
+        //the petals are not displayed in the end letter
         foreach (GameObject petal in UI_petals)
         {
             switch (nextScene)
@@ -279,7 +302,6 @@ public class UIManager : MonoBehaviour
                     break;
 
                 case 3:
-
                     if (petalIndex > 5)
                     {
                         petal.SetActive(false);
@@ -293,6 +315,8 @@ public class UIManager : MonoBehaviour
             }
         }
 
+        //sets the timer for each level
+        //the final level displays a total time
         switch (nextScene)
         {
             case 1:
@@ -313,24 +337,45 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// plays the sound effect as dictated by the sound effect index
+    /// </summary>
     public void PlaySFX()
     {
         sfxsource.clip = soundEffects[soundEffectsIndex];
         sfxsource.Play();
     }
 
+
+    /// <summary>
+    /// the sound effects can be changed independently of the music volume.
+    /// Audio[0] is the game music mixed
+    /// </summary>
+    /// <param name="musicVolume"></param>
     public void MusicVolume(float musicVolume)
     {
         Audio[0].audioMixer.SetFloat("musicVolume", musicVolume);
         MusicVolumePercent.text = (Mathf.Round((musicVolume + 80) * 100f / 100)).ToString() + " %";
     }
 
+    /// <summary>
+    /// the sound effects can be changed independently of the music volume.
+    /// Audio[1] is the game sound effect mixer
+    /// </summary>
+    /// <param name="soundEffectsVolume"></param>
     public void SoundEffectsVolume(float soundEffectsVolume)
     {
         Audio[1].audioMixer.SetFloat("soundEffectsVolume", soundEffectsVolume);
+
+        //gives a percentage of the volume by rounding the float to two decimals x100
         SFXVolumePercent.text = (Mathf.Round((soundEffectsVolume + 80) * 100f / 100)).ToString() + " %";
     }
 
+    /// <summary>
+    /// reduces the volume by 80 (80 is the minimum value) if selected
+    /// covers both the sfx and music
+    /// </summary>
+    /// <param name="isMuted"></param>
     public void Mute(bool isMuted)
     {
         if (isMuted)
@@ -343,27 +388,48 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// displays the final timer score buy adding the timer each level
+    /// </summary>
     public void TimerTotal()
     {
         timerTotal = timer + timerTotal;
     }
 
+    /// <summary>
+    /// will set the resolution of the screen in width x height pixels
+    /// </summary>
+    /// <param name="resolutionIndex"></param>
     public void SetResolution(int resolutionIndex)
     {
         Resolution res = resolutions[resolutionIndex];
         Screen.SetResolution(res.width, res.height, Screen.fullScreen);
     }
 
+    /// <summary>
+    /// selects if the game plays in windowed or fullscreen
+    /// </summary>
+    /// <param name="isFullScreen"></param>
     public void FullScreen(bool isFullScreen)
     {
         Screen.fullScreen = isFullScreen;
     }
 
+
+    /// <summary>
+    /// Lets the player switch between high medium and low settings as set in Unity.
+    /// </summary>
+    /// <param name="qualityIndex"></param>
     public void Quality(int qualityIndex)
     {
         QualitySettings.SetQualityLevel(qualityIndex);
     }
 
+
+    /// <summary>
+    /// when a petal is picked up interacts with the player script and turns on the UIPetals accordingly
+    /// </summary>
+    /// <param name="petalIndex"></param>
     public static void DisplayPetal(int petalIndex)
     {
         InGamePetals[petalIndex].SetActive(true);
