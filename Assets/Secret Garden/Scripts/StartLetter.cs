@@ -8,8 +8,8 @@ public class StartLetter : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI letterText;
     
-
     private string story;
+
 
     private void Awake()
     {
@@ -19,6 +19,10 @@ public class StartLetter : MonoBehaviour
         StartCoroutine("PlayText"); 
     }
 
+    /// <summary>
+    /// This loops through all characters in the text box within the inspector and prints each character individually.
+    /// </summary>
+    /// <returns></returns>
     IEnumerator PlayText()
     {
         foreach(char c in story)

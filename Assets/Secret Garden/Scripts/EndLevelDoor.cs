@@ -8,6 +8,7 @@ public class EndLevelDoor : MonoBehaviour
     
     public void OpenDoor()
     {
+        //Plays the animation for the door opening
         animator.SetTrigger("EndGateOpen");
     }
 }

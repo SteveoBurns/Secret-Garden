@@ -23,9 +23,10 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        //Setting the animations for player movement
         playerAnimator.SetFloat("xInput", movement.x);
         playerAnimator.SetFloat("yInput", movement.y);
-        if (movement.x != 0 || movement.y != 0)
+        if (movement.x != 0 || movement.y != 0) // This is so the idle animation plays
             playerAnimator.SetBool("isMoving", true);
         else
             playerAnimator.SetBool("isMoving", false);
