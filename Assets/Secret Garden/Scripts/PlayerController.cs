@@ -172,8 +172,7 @@ public class PlayerController : MonoBehaviour
         #endregion
 
         #region Key Pickup
-
-        if (petalsCollected == UIManager.loadScene * 3 && hasKey == false) 
+        if (petalsCollected == 3 || petalsCollected == 6 || petalsCollected == 9 && hasKey == false) 
         {
             gameKey.SetActive(true);
         }
@@ -197,7 +196,7 @@ public class PlayerController : MonoBehaviour
        }
 #endregion
 
-        #region Letter Pickup
+#region Letter Pickup
         if (collision.gameObject.tag == "Letter")
         {
             letter.SetActive(false);

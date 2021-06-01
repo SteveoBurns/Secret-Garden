@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 using UnityEngine.Audio;
 
 public class UIManager : MonoBehaviour
@@ -13,6 +14,9 @@ public class UIManager : MonoBehaviour
     public GameObject PetalPanel;
     public GameObject TimerPanel;
     public GameObject ContinueButton;
+    public GameObject PauseButtonObject;
+    public GameObject MenubackGroundA;
+    public GameObject MenubackGroundB;
     public GameObject[] PetalGroups;
     public GameObject[] UI_petals;
     public static GameObject[] InGamePetals;
@@ -24,7 +28,9 @@ public class UIManager : MonoBehaviour
     public GameObject LetterPanel;
     public GameObject[] Player;
     public Collider playerCollider;
+    public GameObject welcome;
 
+    public GameObject mainMenu;
     public Scene[] scenes;
 
     public Text MusicVolumePercent;
@@ -38,6 +44,11 @@ public class UIManager : MonoBehaviour
     public AudioClip[] soundEffects;
     int soundEffectsIndex;
 
+    [SerializeField] public TextMeshProUGUI letterText;
+
+    public string story;
+    public GameObject anyKeyObject;
+
     public Text timerUI;
     int minutes;
     int seconds;
@@ -50,10 +61,12 @@ public class UIManager : MonoBehaviour
 
     public Dropdown resolution;
     public Resolution[] resolutions;
-    string[] sceneList = new string[] { "Start Letter", "Level 1 Test", "Level 2 Test", "Level 3 Test", "End Letter" };
+    string[] sceneList = new string[] { "MainMenu", "Start Letter", "Level 1 Test", "Level 2 Test", "Level 3 Test", "End Letter" };
 
     public static UIManager instance;
-
+    CanvasGroup startgroup;
+    CanvasGroup mainMenuGroup;
+    public float lerpTimeValue;
 
     private void Awake()
     {
@@ -67,26 +80,38 @@ public class UIManager : MonoBehaviour
         {
             Destroy(this);
         }
+
+        story = letterText.text;
+        letterText.text = "";
     }
 
     private void Start()
     {
+        startgroup = MenubackGroundB.GetComponent<CanvasGroup>();
+        mainMenuGroup = mainMenu.GetComponent<CanvasGroup>();
+        startgroup.alpha = 0;
         timer = 1;
         PauseMenu.SetActive(false);
         OptionsMenu.SetActive(false);
+        PauseButtonObject.SetActive(false);
+        LetterPanel.SetActive(false);
+        
 
-        musicSource = GetComponent<AudioSource>();
-        musicSource.clip = levelMusic[0];
-        musicSource.Play();
-
-        muted = false;
-
-        if (nextScene == 0)
+        if (nextScene <= 2)
         {
             PetalPanel.SetActive(false);
             TimerPanel.SetActive(false);
         }
 
+        #region playing Music
+        musicSource = GetComponent<AudioSource>();
+        musicSource.clip = levelMusic[0];
+        musicSource.Play();
+
+        muted = false;
+        #endregion
+
+        #region resolution and screen options
         Screen.fullScreen = true;
         resolutions = Screen.resolutions;
         resolution.ClearOptions();
@@ -108,19 +133,28 @@ public class UIManager : MonoBehaviour
         resolution.AddOptions(options);
         resolution.value = currentResolutionIndex;
         resolution.RefreshShownValue();
+        #endregion
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape)  && nextScene > 0)
         {
             PauseButton();
+        }
+
+        if (Input.anyKey && anyKeyObject.activeSelf == true)
+        {
+            anyKeyObject.SetActive(false);
+            welcome.SetActive(false);
+            StartCoroutine(FadeInOut(0, 1, startgroup));
+            StartCoroutine(FadeInOut(0, 1, mainMenuGroup));
         }
 
         int minutes = Mathf.FloorToInt(timer / 60F);
         int seconds = Mathf.FloorToInt(timer - minutes * 60);
 
-        if (nextScene <= 3)
+        if (nextScene <= 2)
         {
             timer = (int)(timerStart - Time.time);
         }
@@ -132,7 +166,7 @@ public class UIManager : MonoBehaviour
         string niceTime = string.Format("{0:0}:{1:00}", minutes, seconds);
         timerUI.text = "Time Remaining: " + niceTime;
 
-        if (timer <= 0 && nextScene >= 1)
+        if (timer <= 0 && nextScene >= 2)
         {
             RestartLevel();
         }
@@ -177,14 +211,42 @@ public class UIManager : MonoBehaviour
 #endif
     }
 
+    public void PlayButton()
+    {
+        //doesnt destroy the UI elements needed in the game
+        DontDestroyOnLoad(UIManagerObject);
+        LetterPanel.SetActive(true);
+        ContinueButton.SetActive(true);
+        StartCoroutine("PlayText");
+        nextScene++;
+        mainMenu.SetActive(false);
+        SceneManager.LoadScene(nextScene);
+    }
+
     public void Continue()
     {
         LetterPanel.SetActive(false);
         nextScene++;
+        if (nextScene > 5)
+            nextScene = 0;
+
+        //enables the in game UI elements not present in the opening letter
+        //disables the UI element not present in the game
+        PetalPanel.SetActive(true);
+        TimerPanel.SetActive(true);
+        RetryPanel.SetActive(true);
+        ContinueButton.SetActive(false);
 
         switch (nextScene)
         {
             case 1:
+                musicSource.clip = levelMusic[0];
+                ContinueButton.SetActive(true);
+                break;
+
+            case 2:
+                MenubackGroundA.SetActive(false);
+                MenubackGroundB.SetActive(false);
                 musicSource.clip = levelMusic[1];
                 timerStart = 181 + Time.time;
                 petalIndex = 0;
@@ -195,7 +257,7 @@ public class UIManager : MonoBehaviour
                 }
                 break;
 
-            case 2:
+            case 3:
                 musicSource.clip = levelMusic[2];
                 timerStart = 241 + Time.time;
                 petalIndex = 3;
@@ -206,7 +268,7 @@ public class UIManager : MonoBehaviour
                 }
                 break;
 
-            case 3:
+            case 4:
                 musicSource.clip = levelMusic[3];
                 timerStart = 301 + Time.time;
                 petalIndex = 6;
@@ -217,11 +279,11 @@ public class UIManager : MonoBehaviour
                 }
                 break;
 
-            case 4:
+            case 5:
                 //plays the opening music on the final level and displays the timer total on the timer
                 musicSource.clip = levelMusic[0];
                 timerStart = timerTotal;
-                // 9 
+                // 9 petals appear on the final level
                 petalIndex = 9;
                 break;
         }
@@ -240,12 +302,7 @@ public class UIManager : MonoBehaviour
         //doesnt destroy the UI elements needed in the game
         DontDestroyOnLoad(UIManagerObject);
 
-       //enables the in game UI elements not present in the opening letter
-       //disables the UI element not present in the game
-        PetalPanel.SetActive(true);
-        TimerPanel.SetActive(true);
-        RetryPanel.SetActive(true);
-        ContinueButton.SetActive(false);
+
     }
 
     /// <summary>
@@ -269,7 +326,7 @@ public class UIManager : MonoBehaviour
         timerOffset = Time.time;
 
         //if you restart the final and start letter it does not add to your retry attempts
-        if(nextScene >= 1 && nextScene <= 3)
+        if(nextScene >= 2 && nextScene <= 4)
         {
             retryCounter++;
         }
@@ -280,16 +337,19 @@ public class UIManager : MonoBehaviour
         //this section resets the number of petals in the UI,
         //0 in the first level, 6 in the second. 
         //the petals are not displayed in the end letter
+        //sets the timer for each level
+        //the final level displays a total time
         foreach (GameObject petal in UI_petals)
         {
             switch (nextScene)
             {
-                case 1:
+                case 2:
                     petal.SetActive(false);
                     PlayerController.petalsCollected = 0;
+                    timerStart = 181 + timerOffset;
                     break;
 
-                case 2:
+                case 3:
                     if(petalIndex > 2)
                     {
                         petal.SetActive(false);
@@ -298,10 +358,11 @@ public class UIManager : MonoBehaviour
                         {
                             UI_petals[i].SetActive(true);
                         }
+                        timerStart = 241 + timerOffset;
                     }
                     break;
 
-                case 3:
+                case 4:
                     if (petalIndex > 5)
                     {
                         petal.SetActive(false);
@@ -310,30 +371,15 @@ public class UIManager : MonoBehaviour
                         {
                             UI_petals[i].SetActive(true);
                         }
+                        timerStart = 301 + timerOffset;
                     }
                     break;
+
+
+                case 5:
+                    timerStart = timerTotal;
+                    break;
             }
-        }
-
-        //sets the timer for each level
-        //the final level displays a total time
-        switch (nextScene)
-        {
-            case 1:
-                timerStart = 181 + timerOffset;
-                break;
-
-            case 2:
-                timerStart = 241 + timerOffset;
-                break;
-
-            case 3:
-                timerStart = 301+ timerOffset;
-                break;
-
-            case 4:
-                timerStart = timerTotal;
-                break;
         }
     }
 
@@ -433,5 +479,30 @@ public class UIManager : MonoBehaviour
     public static void DisplayPetal(int petalIndex)
     {
         InGamePetals[petalIndex].SetActive(true);
+    }
+
+    public IEnumerator PlayText()
+    {
+        foreach (char c in story)
+        {
+            letterText.text += c;
+            yield return new WaitForSeconds(0.05f);
+        }
+    }
+
+    public IEnumerator FadeInOut(float start, float end, CanvasGroup target)
+    {
+        while (target.alpha < end)
+        {
+            target.alpha = target.alpha + 0.01f;
+            if (target.alpha >= 1)
+            {
+                target.alpha = 1;
+                yield return 0;
+            }
+
+            yield return 0;
+        }
+        yield return 0;
     }
 }
