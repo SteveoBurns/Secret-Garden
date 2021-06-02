@@ -99,7 +99,7 @@ public class PlayerController : MonoBehaviour
 
             UIManager.petalIndex = playerPetalIndex;
             UIManager.DisplayPetal(playerPetalIndex);
-            petalsCollected++;  
+            petalsCollected++;
         }
 
         #region End Level Doors
@@ -126,7 +126,7 @@ public class PlayerController : MonoBehaviour
         #endregion
 
         #region Handle PickUp
-        if (collision.gameObject.tag=="handle")
+        if (collision.gameObject.tag == "handle")
         {
             hasHandle = true;
             //handle.enabled = true;
@@ -160,11 +160,11 @@ public class PlayerController : MonoBehaviour
         #endregion
 
         #region Key Pickup
-        if (petalsCollected == 3 || petalsCollected == 6 || petalsCollected == 9 && hasKey == false) 
+        if (petalsCollected == 3 || petalsCollected == 6 || petalsCollected == 9 && hasKey == false)
         {
             gameKey.SetActive(true);
         }
-        
+
         if (collision.gameObject.tag == "key" && hasKey == false)
         {
             hasKey = true;
@@ -173,14 +173,14 @@ public class PlayerController : MonoBehaviour
                 return;
             else
                 letter.SetActive(true);
-             
+
         }
         #endregion
 
         #region Final Flower
-        if (collision.gameObject.tag == "Final Flower") 
+        if (collision.gameObject.tag == "Final Flower")
         {
-           SceneManager.LoadScene("End Letter");
+            SceneManager.LoadScene("End Letter");
         }
         #endregion
 
@@ -191,5 +191,5 @@ public class PlayerController : MonoBehaviour
             finalFlower.SetActive(true);
         }
         #endregion
-
+    }
 }
