@@ -111,12 +111,6 @@ public class PlayerController : MonoBehaviour
                 endDoor = collision.gameObject.GetComponent<EndLevelDoor>();
                 endDoor.OpenDoor();
                 animator.SetTrigger("OpenGate");
-
-
-                // play door sound
-                // fade to black
-
-                // Load next scene
             }
         }
         if (collision.gameObject.tag == "End Door1")
@@ -127,12 +121,6 @@ public class PlayerController : MonoBehaviour
                 endDoor = collision.gameObject.GetComponent<EndLevelDoor>();
                 endDoor.OpenDoor();
                 animator.SetTrigger("OpenGateDown");
-
-
-                // play door sound
-                // fade to black
-
-                // Load next scene
             }
         }
         #endregion
@@ -189,14 +177,14 @@ public class PlayerController : MonoBehaviour
         }
         #endregion
 
-#region Final Flower
-       if (collision.gameObject.tag == "Final Flower") 
-       {
+        #region Final Flower
+        if (collision.gameObject.tag == "Final Flower") 
+        {
            SceneManager.LoadScene("End Letter");
-       }
-#endregion
+        }
+        #endregion
 
-#region Letter Pickup
+        #region Letter Pickup
         if (collision.gameObject.tag == "Letter")
         {
             letter.SetActive(false);
@@ -204,18 +192,4 @@ public class PlayerController : MonoBehaviour
         }
         #endregion
 
-#region Level Loading
-       if (collision.gameObject.tag == "EndLevel1")
-        {
-            UIManager.loadScene++;
-            SceneManager.LoadScene(UIManager.loadScene);
-        }
-
-        if (collision.gameObject.tag == "EndLevel2")
-        {
-            UIManager.loadScene++;
-            SceneManager.LoadScene(UIManager.loadScene);
-        }
-#endregion
-    }
 }

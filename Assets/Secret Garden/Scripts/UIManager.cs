@@ -30,6 +30,8 @@ public class UIManager : MonoBehaviour
     public Collider playerCollider;
     public GameObject welcome;
 
+    public static UIManager uiclass;
+
     public GameObject mainMenu;
     public Scene[] scenes;
 
@@ -85,10 +87,12 @@ public class UIManager : MonoBehaviour
 
         story = letterText.text;
         letterText.text = "";
+        uiclass = this;
     }
 
     private void Start()
     {
+        timerTotal = 0;
         startgroup = MenubackGroundB.GetComponent<CanvasGroup>();
         mainMenuGroup = mainMenu.GetComponent<CanvasGroup>();
         startgroup.alpha = 0;
@@ -156,7 +160,7 @@ public class UIManager : MonoBehaviour
         int minutes = Mathf.FloorToInt(timer / 60F);
         int seconds = Mathf.FloorToInt(timer - minutes * 60);
 
-        if (nextScene >= 2 && nextScene <= 5)
+        if (nextScene >= 2 && nextScene < 5)
         {
             timer = (int)(timerStart - Time.time);
         }
@@ -227,12 +231,12 @@ public class UIManager : MonoBehaviour
 
     public void Continue()
     {
-        TimeSet();
         LetterPanel.SetActive(false);
         nextScene++;
         if (nextScene > 5)
             nextScene = 0;
 
+        timerOffset = Time.time;
         //enables the in game UI elements not present in the opening letter
         //disables the UI element not present in the game
         PetalPanel.SetActive(true);
@@ -251,7 +255,7 @@ public class UIManager : MonoBehaviour
                 MenubackGroundA.SetActive(false);
                 MenubackGroundB.SetActive(false);
                 musicSource.clip = levelMusic[1];
-                timerStart = 181;
+                timerStart = 181 + timerOffset;
                 petalIndex = 0;
                 PetalGroups[0].SetActive(true);
                 for (int i = 0; i < UI_petals.Length; i++)
@@ -262,7 +266,7 @@ public class UIManager : MonoBehaviour
 
             case 3:
                 musicSource.clip = levelMusic[2];
-                timerStart = 241; ;
+                timerStart = 241 + timerOffset; 
                 petalIndex = 3;
                 PetalGroups[1].SetActive(true);
                 for (int i = 3; i < UI_petals.Length; i++)
@@ -273,7 +277,7 @@ public class UIManager : MonoBehaviour
 
             case 4:
                 musicSource.clip = levelMusic[3];
-                timerStart = 301;
+                timerStart = 301 + timerOffset;
                 petalIndex = 6;
                 PetalGroups[2].SetActive(true);
                 for (int i = 6; i < UI_petals.Length; i++)
@@ -505,8 +509,4 @@ public class UIManager : MonoBehaviour
         yield return 0;
     }
     
-    public void TimeSet()
-    {
-        timeMarker = Time.time;
-    }
 }
