@@ -59,6 +59,8 @@ public class UIManager : MonoBehaviour
     public int timerTotal;
     float timerOffset;
 
+    public float timeMarker;
+
     public Dropdown resolution;
     public Resolution[] resolutions;
     string[] sceneList = new string[] { "MainMenu", "Start Letter", "Level 1 Test", "Level 2 Test", "Level 3 Test", "End Letter" };
@@ -154,13 +156,13 @@ public class UIManager : MonoBehaviour
         int minutes = Mathf.FloorToInt(timer / 60F);
         int seconds = Mathf.FloorToInt(timer - minutes * 60);
 
-        if (nextScene <= 2)
+        if (nextScene >= 2 && nextScene <= 5)
         {
             timer = (int)(timerStart - Time.time);
         }
         else
         {
-            timer = (int)timerStart;
+            timer = timerTotal;
         }
 
         string niceTime = string.Format("{0:0}:{1:00}", minutes, seconds);
@@ -225,6 +227,7 @@ public class UIManager : MonoBehaviour
 
     public void Continue()
     {
+        TimeSet();
         LetterPanel.SetActive(false);
         nextScene++;
         if (nextScene > 5)
@@ -248,7 +251,7 @@ public class UIManager : MonoBehaviour
                 MenubackGroundA.SetActive(false);
                 MenubackGroundB.SetActive(false);
                 musicSource.clip = levelMusic[1];
-                timerStart = 181 + Time.time;
+                timerStart = 181;
                 petalIndex = 0;
                 PetalGroups[0].SetActive(true);
                 for (int i = 0; i < UI_petals.Length; i++)
@@ -259,7 +262,7 @@ public class UIManager : MonoBehaviour
 
             case 3:
                 musicSource.clip = levelMusic[2];
-                timerStart = 241 + Time.time;
+                timerStart = 241; ;
                 petalIndex = 3;
                 PetalGroups[1].SetActive(true);
                 for (int i = 3; i < UI_petals.Length; i++)
@@ -270,7 +273,7 @@ public class UIManager : MonoBehaviour
 
             case 4:
                 musicSource.clip = levelMusic[3];
-                timerStart = 301 + Time.time;
+                timerStart = 301;
                 petalIndex = 6;
                 PetalGroups[2].SetActive(true);
                 for (int i = 6; i < UI_petals.Length; i++)
@@ -301,8 +304,6 @@ public class UIManager : MonoBehaviour
 
         //doesnt destroy the UI elements needed in the game
         DontDestroyOnLoad(UIManagerObject);
-
-
     }
 
     /// <summary>
@@ -461,7 +462,6 @@ public class UIManager : MonoBehaviour
         Screen.fullScreen = isFullScreen;
     }
 
-
     /// <summary>
     /// Lets the player switch between high medium and low settings as set in Unity.
     /// </summary>
@@ -470,7 +470,6 @@ public class UIManager : MonoBehaviour
     {
         QualitySettings.SetQualityLevel(qualityIndex);
     }
-
 
     /// <summary>
     /// when a petal is picked up interacts with the player script and turns on the UIPetals accordingly
@@ -504,5 +503,10 @@ public class UIManager : MonoBehaviour
             yield return 0;
         }
         yield return 0;
+    }
+    
+    public void TimeSet()
+    {
+        timeMarker = Time.time;
     }
 }
