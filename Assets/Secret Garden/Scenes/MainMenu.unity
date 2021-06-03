@@ -392,22 +392,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 545365383}
   m_CullTransparentMesh: 1
---- !u!1 &548427792 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8407559565536258850, guid: 51ce2fa10ded4a442b1c8431d07b5624, type: 3}
-  m_PrefabInstance: {fileID: 802678828}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &695665619 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7461964448276343247, guid: 51ce2fa10ded4a442b1c8431d07b5624, type: 3}
-  m_PrefabInstance: {fileID: 802678828}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &765881208 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3563110060115556665, guid: 51ce2fa10ded4a442b1c8431d07b5624, type: 3}
@@ -1481,7 +1465,7 @@ PrefabInstance:
     - target: {fileID: 1859082789016367073, guid: 51ce2fa10ded4a442b1c8431d07b5624, type: 3}
       propertyPath: Lever
       value: 
-      objectReference: {fileID: 1659913630}
+      objectReference: {fileID: 0}
     - target: {fileID: 1859082789016367073, guid: 51ce2fa10ded4a442b1c8431d07b5624, type: 3}
       propertyPath: story
       value: "Hello my darling, If you\u2019re reading this then I\u2019ve gone on
@@ -1554,11 +1538,11 @@ PrefabInstance:
     - target: {fileID: 1859082789016367073, guid: 51ce2fa10ded4a442b1c8431d07b5624, type: 3}
       propertyPath: LeverHolder
       value: 
-      objectReference: {fileID: 548427792}
+      objectReference: {fileID: 0}
     - target: {fileID: 1859082789016367073, guid: 51ce2fa10ded4a442b1c8431d07b5624, type: 3}
       propertyPath: letter1Text
       value: 
-      objectReference: {fileID: 695665619}
+      objectReference: {fileID: 0}
     - target: {fileID: 1859082789016367073, guid: 51ce2fa10ded4a442b1c8431d07b5624, type: 3}
       propertyPath: anyKeyObject
       value: 
@@ -1574,7 +1558,7 @@ PrefabInstance:
     - target: {fileID: 1859082789016367073, guid: 51ce2fa10ded4a442b1c8431d07b5624, type: 3}
       propertyPath: EndLetterPanel
       value: 
-      objectReference: {fileID: 1534791935}
+      objectReference: {fileID: 0}
     - target: {fileID: 1859082789016367073, guid: 51ce2fa10ded4a442b1c8431d07b5624, type: 3}
       propertyPath: MenubackGroundA
       value: 
@@ -2163,6 +2147,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.4
       objectReference: {fileID: 0}
+    - target: {fileID: 7461964448276343247, guid: 51ce2fa10ded4a442b1c8431d07b5624, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7494811688585943976, guid: 51ce2fa10ded4a442b1c8431d07b5624, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -2432,11 +2420,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1859082789319574309, guid: 51ce2fa10ded4a442b1c8431d07b5624, type: 3}
   m_PrefabInstance: {fileID: 802678828}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1534791935 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 192655645744269121, guid: 51ce2fa10ded4a442b1c8431d07b5624, type: 3}
-  m_PrefabInstance: {fileID: 802678828}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1593420875 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3375638609162161894, guid: 51ce2fa10ded4a442b1c8431d07b5624, type: 3}
@@ -2454,11 +2437,6 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!1 &1659913630 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2076255513138611297, guid: 51ce2fa10ded4a442b1c8431d07b5624, type: 3}
-  m_PrefabInstance: {fileID: 802678828}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1660352409
 GameObject:
   m_ObjectHideFlags: 0
