@@ -26,9 +26,11 @@ public class UIManager : MonoBehaviour
     public Text onScreenRetry;
     public static int loadScene;
     public GameObject LetterPanel;
-    public GameObject[] Player;
     public Collider playerCollider;
     public GameObject welcome;
+    [SerializeField] GameObject Lever;
+    [SerializeField] GameObject LeverHolder;
+    public static bool leverTrue;
 
     public static UIManager uiclass;
 
@@ -65,7 +67,6 @@ public class UIManager : MonoBehaviour
 
     public Dropdown resolution;
     public Resolution[] resolutions;
-    string[] sceneList = new string[] { "MainMenu", "Start Letter", "Level 1 Test", "Level 2 Test", "Level 3 Test", "End Letter" };
 
     public static UIManager instance;
     CanvasGroup startgroup;
@@ -153,8 +154,8 @@ public class UIManager : MonoBehaviour
         {
             anyKeyObject.SetActive(false);
             welcome.SetActive(false);
-            StartCoroutine(FadeInOut(0, 1, startgroup));
-            StartCoroutine(FadeInOut(0, 1, mainMenuGroup));
+            StartCoroutine(FadeInOut(1, startgroup));
+            StartCoroutine(FadeInOut(1, mainMenuGroup));
         }
 
         int minutes = Mathf.FloorToInt(timer / 60F);
@@ -179,6 +180,7 @@ public class UIManager : MonoBehaviour
 
         loadScene = nextScene;
         InGamePetals = UI_petals;
+
     }
    
     public void PauseButton()
@@ -279,6 +281,7 @@ public class UIManager : MonoBehaviour
                 musicSource.clip = levelMusic[3];
                 timerStart = 301 + timerOffset;
                 petalIndex = 6;
+                LeverHolder.SetActive(true);
                 PetalGroups[2].SetActive(true);
                 for (int i = 6; i < UI_petals.Length; i++)
                 {
@@ -493,7 +496,7 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public IEnumerator FadeInOut(float start, float end, CanvasGroup target)
+    public IEnumerator FadeInOut(float end, CanvasGroup target)
     {
         while (target.alpha < end)
         {
@@ -503,7 +506,6 @@ public class UIManager : MonoBehaviour
                 target.alpha = 1;
                 yield return 0;
             }
-
             yield return 0;
         }
         yield return 0;
