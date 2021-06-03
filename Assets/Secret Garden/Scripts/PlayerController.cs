@@ -141,7 +141,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.tag=="handle")
         {
             hasHandle = true;
-            //handle.enabled = true;
+            UIManager.leverTrue = true;
             Destroy(collision.gameObject);
         }
         #endregion
@@ -152,7 +152,7 @@ public class PlayerController : MonoBehaviour
         {
 
             hasHandle = false;
-            //handle.enabled = false;
+            UIManager.leverTrue = false;
             gate = collision.gameObject.GetComponent<HandleGate>();
             gate.OpenGate();
             animator.SetTrigger("OpenHandleUp");
@@ -163,7 +163,7 @@ public class PlayerController : MonoBehaviour
         {
 
             hasHandle = false;
-            //handle.enabled = false;
+            UIManager.leverTrue = false;
             gate = collision.gameObject.GetComponent<HandleGate>();
             gate.OpenGate();
             animator.SetTrigger("OpenHandleRight");
@@ -172,7 +172,9 @@ public class PlayerController : MonoBehaviour
         #endregion
 
         #region Key Pickup
-        if (petalsCollected == 3 || petalsCollected == 6 || petalsCollected == 9 && hasKey == false) 
+        if (((petalsCollected == 3 && UIManager.loadScene == 2) ||
+            (petalsCollected == 6 && UIManager.loadScene == 3) ||
+            (petalsCollected == 9 && UIManager.loadScene == 4)) && hasKey == false) 
         {
             gameKey.SetActive(true);
         }
