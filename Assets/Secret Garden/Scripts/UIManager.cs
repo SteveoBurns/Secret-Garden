@@ -26,19 +26,20 @@ public class UIManager : MonoBehaviour
     public Text onScreenRetry;
     public static int loadScene;
     public GameObject LetterPanel;
+    public GameObject[] Player;
     public Collider playerCollider;
     public GameObject welcome;
-    [SerializeField] GameObject Lever;
-    [SerializeField] GameObject LeverHolder;
-    public static bool leverTrue;
-
-    public static UIManager uiclass;
+    public GameObject EndLetterPanel;
 
     public GameObject mainMenu;
     public Scene[] scenes;
 
     public Text MusicVolumePercent;
     public Text SFXVolumePercent;
+
+    public static bool leverTrue;
+    public GameObject Lever;
+    public GameObject LeverHolder;
 
     public AudioMixerGroup[] Audio;
     public AudioSource musicSource;
@@ -49,17 +50,16 @@ public class UIManager : MonoBehaviour
     int soundEffectsIndex;
 
     [SerializeField] public TextMeshProUGUI letterText;
+    [SerializeField] public TextMeshProUGUI letter1Text;
 
     public string story;
+    public string story1;
     public GameObject anyKeyObject;
 
     public Text timerUI;
-    int minutes;
-    int seconds;
     public float timerStart;
     int timer;
     [SerializeField] int nextScene;
-    string niceTime;
     public int timerTotal;
     float timerOffset;
 
@@ -71,7 +71,6 @@ public class UIManager : MonoBehaviour
     public static UIManager instance;
     CanvasGroup startgroup;
     CanvasGroup mainMenuGroup;
-    public float lerpTimeValue;
 
     private void Awake()
     {
@@ -88,12 +87,10 @@ public class UIManager : MonoBehaviour
 
         story = letterText.text;
         letterText.text = "";
-        uiclass = this;
     }
 
     private void Start()
     {
-        timerTotal = 0;
         startgroup = MenubackGroundB.GetComponent<CanvasGroup>();
         mainMenuGroup = mainMenu.GetComponent<CanvasGroup>();
         startgroup.alpha = 0;
@@ -154,14 +151,17 @@ public class UIManager : MonoBehaviour
         {
             anyKeyObject.SetActive(false);
             welcome.SetActive(false);
-            StartCoroutine(FadeInOut(1, startgroup));
-            StartCoroutine(FadeInOut(1, mainMenuGroup));
+            StartCoroutine(FadeInOut( 1, startgroup));
+            StartCoroutine(FadeInOut( 1, mainMenuGroup));
         }
 
         int minutes = Mathf.FloorToInt(timer / 60F);
         int seconds = Mathf.FloorToInt(timer - minutes * 60);
+        string niceTime = string.Format("{0:0}:{1:00}", minutes, seconds);
 
-        if (nextScene >= 2 && nextScene < 5)
+        timerUI.text = "Time Remaining: " + niceTime;
+
+        if (nextScene >= 2 && nextScene <= 5)
         {
             timer = (int)(timerStart - Time.time);
         }
@@ -170,17 +170,22 @@ public class UIManager : MonoBehaviour
             timer = timerTotal;
         }
 
-        string niceTime = string.Format("{0:0}:{1:00}", minutes, seconds);
-        timerUI.text = "Time Remaining: " + niceTime;
-
         if (timer <= 0 && nextScene >= 2)
         {
             RestartLevel();
         }
 
+        if (leverTrue == true)
+        {
+            Lever.SetActive(true);
+        }
+        if(leverTrue == false)
+        {
+            Lever.SetActive(false);
+        }
+
         loadScene = nextScene;
         InGamePetals = UI_petals;
-
     }
    
     public void PauseButton()
@@ -225,7 +230,7 @@ public class UIManager : MonoBehaviour
         DontDestroyOnLoad(UIManagerObject);
         LetterPanel.SetActive(true);
         ContinueButton.SetActive(true);
-        StartCoroutine("PlayText");
+        StartCoroutine(PlayText(0));
         nextScene++;
         mainMenu.SetActive(false);
         SceneManager.LoadScene(nextScene);
@@ -233,12 +238,12 @@ public class UIManager : MonoBehaviour
 
     public void Continue()
     {
+        TimeSet();
         LetterPanel.SetActive(false);
         nextScene++;
         if (nextScene > 5)
             nextScene = 0;
 
-        timerOffset = Time.time;
         //enables the in game UI elements not present in the opening letter
         //disables the UI element not present in the game
         PetalPanel.SetActive(true);
@@ -248,6 +253,12 @@ public class UIManager : MonoBehaviour
 
         switch (nextScene)
         {
+            case 0:
+                MenubackGroundB.SetActive(true);
+                mainMenu.SetActive(true);
+                musicSource.clip = levelMusic[0];
+                break;
+
             case 1:
                 musicSource.clip = levelMusic[0];
                 ContinueButton.SetActive(true);
@@ -257,7 +268,7 @@ public class UIManager : MonoBehaviour
                 MenubackGroundA.SetActive(false);
                 MenubackGroundB.SetActive(false);
                 musicSource.clip = levelMusic[1];
-                timerStart = 181 + timerOffset;
+                timerStart = 181 + timeMarker;
                 petalIndex = 0;
                 PetalGroups[0].SetActive(true);
                 for (int i = 0; i < UI_petals.Length; i++)
@@ -268,7 +279,7 @@ public class UIManager : MonoBehaviour
 
             case 3:
                 musicSource.clip = levelMusic[2];
-                timerStart = 241 + timerOffset; 
+                timerStart = 241 + timeMarker;
                 petalIndex = 3;
                 PetalGroups[1].SetActive(true);
                 for (int i = 3; i < UI_petals.Length; i++)
@@ -279,9 +290,10 @@ public class UIManager : MonoBehaviour
 
             case 4:
                 musicSource.clip = levelMusic[3];
-                timerStart = 301 + timerOffset;
+                timerStart = 301 + timeMarker;
                 petalIndex = 6;
                 LeverHolder.SetActive(true);
+                Lever.SetActive(false);
                 PetalGroups[2].SetActive(true);
                 for (int i = 6; i < UI_petals.Length; i++)
                 {
@@ -293,8 +305,10 @@ public class UIManager : MonoBehaviour
                 //plays the opening music on the final level and displays the timer total on the timer
                 musicSource.clip = levelMusic[0];
                 timerStart = timerTotal;
-                // 9 petals appear on the final level
+                EndLetterPanel.SetActive(true);
+                StartCoroutine(PlayText(1));
                 petalIndex = 9;
+                ContinueButton.SetActive(true);
                 break;
         }
         
@@ -400,7 +414,6 @@ public class UIManager : MonoBehaviour
         sfxsource.Play();
     }
 
-
     /// <summary>
     /// the sound effects can be changed independently of the music volume.
     /// Audio[0] is the game music mixed
@@ -487,13 +500,25 @@ public class UIManager : MonoBehaviour
         InGamePetals[petalIndex].SetActive(true);
     }
 
-    public IEnumerator PlayText()
+    public IEnumerator PlayText(int textIndex)
     {
-        foreach (char c in story)
+        if(textIndex == 0)
         {
-            letterText.text += c;
-            yield return new WaitForSeconds(0.05f);
+            foreach (char c in story)
+            {
+                letterText.text += c;
+                yield return new WaitForSeconds(0.05f);
+            }
         }
+        if (textIndex == 1)
+        {
+            foreach (char c in story1)
+            {
+                letter1Text.text += c;
+                yield return new WaitForSeconds(0.05f);
+            }
+        }
+
     }
 
     public IEnumerator FadeInOut(float end, CanvasGroup target)
@@ -506,9 +531,14 @@ public class UIManager : MonoBehaviour
                 target.alpha = 1;
                 yield return 0;
             }
+
             yield return 0;
         }
         yield return 0;
     }
     
+    public void TimeSet()
+    {
+        timeMarker = Time.time;
+    }
 }
