@@ -26,8 +26,6 @@ public class UIManager : MonoBehaviour
     public Text onScreenRetry;
     public static int loadScene;
     public GameObject LetterPanel;
-    public GameObject[] Player;
-    public Collider playerCollider;
     public GameObject welcome;
     public GameObject EndLetterPanel;
 
@@ -71,6 +69,7 @@ public class UIManager : MonoBehaviour
     public static UIManager instance;
     CanvasGroup startgroup;
     CanvasGroup mainMenuGroup;
+    public GameObject toMainButton;
 
     private void Awake()
     {
@@ -224,6 +223,13 @@ public class UIManager : MonoBehaviour
 #endif
     }
 
+    public void MainMenu()
+    {
+        nextScene = 0;
+        Destroy(UIManagerObject);
+        SceneManager.LoadSceneAsync(0);
+    }
+
     public void PlayButton()
     {
         //doesnt destroy the UI elements needed in the game
@@ -257,6 +263,7 @@ public class UIManager : MonoBehaviour
                 MenubackGroundB.SetActive(true);
                 mainMenu.SetActive(true);
                 musicSource.clip = levelMusic[0];
+                toMainButton.SetActive(false);
                 break;
 
             case 1:
@@ -308,7 +315,7 @@ public class UIManager : MonoBehaviour
                 EndLetterPanel.SetActive(true);
                 StartCoroutine(PlayText(1));
                 petalIndex = 9;
-                ContinueButton.SetActive(true);
+                toMainButton.SetActive(true);
                 break;
         }
         
