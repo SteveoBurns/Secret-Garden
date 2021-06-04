@@ -324,7 +324,6 @@ public class UIManager : MonoBehaviour
         SceneManager.LoadSceneAsync(nextScene, LoadSceneMode.Single);
 
         //doesnt destroy the UI elements needed in the game
-        if (nextScene > 0)
         DontDestroyOnLoad(UIManagerObject);
     }
 
