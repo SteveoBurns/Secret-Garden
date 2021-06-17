@@ -260,6 +260,7 @@ public class UIManager : MonoBehaviour
         switch (nextScene)
         {
             case 0:
+                StopCoroutine(PlayText(1));
                 MenubackGroundB.SetActive(true);
                 mainMenu.SetActive(true);
                 musicSource.clip = levelMusic[0];
@@ -272,6 +273,7 @@ public class UIManager : MonoBehaviour
                 break;
 
             case 2:
+                StopCoroutine(PlayText(0));
                 MenubackGroundA.SetActive(false);
                 MenubackGroundB.SetActive(false);
                 musicSource.clip = levelMusic[1];
@@ -517,6 +519,7 @@ public class UIManager : MonoBehaviour
                 yield return new WaitForSeconds(0.05f);
             }
         }
+
         if (textIndex == 1)
         {
             foreach (char c in story1)
