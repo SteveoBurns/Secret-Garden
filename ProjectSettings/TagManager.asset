@@ -3,7 +3,25 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Trigger
+  - Box
+  - petal1_1
+  - petal1_2
+  - petal1_3
+  - petal2_1
+  - petal2_2
+  - petal2_3
+  - petal3_1
+  - petal3_2
+  - petal3_3
+  - handle
+  - key
+  - handle_door
+  - End Door
+  - petal
+  - EndLevel2
+  - EndLevel1
   layers:
   - Default
   - TransparentFX
